@@ -1,0 +1,20 @@
+
+## Additional Files to Create:
+
+### 1. **CONTRIBUTING.md**
+```markdown
+# Contributing to GNCE Framework
+
+Thank you for your interest in contributing to the GNCE Framework!
+
+## Development Environment Setup
+[Detailed setup instructions]
+
+## Code Style
+[Style guide specifics]
+
+## Pull Request Process
+[PR workflow details]
+
+## Testing Requirements
+[Test coverage expectations]

@@ -1,0 +1,78 @@
+{
+  "action": "POST_CONTENT",
+  "content": "How to do something harmful (test) \u2014 should be blocked.",
+  "user_id": "user-demo-001",
+  "timestamp_utc": "2026-01-04T20:38:10+00:00",
+  "risk_indicators": {
+    "harmful_content_flag": true,
+    "violation_category": "harmful_content",
+    "previous_violations": 0
+  },
+  "meta": {
+    "jurisdiction": "EU",
+    "customer_profile_id": "VLOP_SOCIAL_META", 
+    "is_vlop": true 
+  },
+  "industry_id": "SOCIAL_MEDIA",
+  "profile_id": "VLOP_SOCIAL_META",
+  "platform_behavior": {
+    "self_preference": false,
+    "ranking_bias": false
+  },
+  "dsa": {
+    "systemic_risk_assessed": false,
+    "mitigation_measures_in_place": true,
+    "independent_audit_last_12m": true,
+    "crisis_protocol_defined": true,
+    "crisis_protocol_tested": true,
+    "researcher_data_access": true,
+    "non_profiling_option_exposed": true,
+    "minors_risk_programme": true,
+    "age_assurance_controls": true,
+    "transparency_report_published": true,
+    "internal_complaint_system_available": true,
+    "out_of_court_body_recognised": true
+  },
+  "dma_profile": {
+    "is_gatekeeper": true,
+    "self_preferencing": false,
+    "data_combining_without_consent": false,
+    "ranking_data_discrimination": false,
+    "bundling_detected": false,
+    "interoperability_refused": false,
+    "anti_steering_blocked": false
+  },
+  "audit": {
+    "dma_audit_completed": true
+  },
+  "ai_profile": {
+    "is_ai_system": true,
+    "prohibited_practice": false,
+    "high_risk": false,
+    "transparency_notice": true,
+    "model_id": "gnce-demo-model-1",
+    "system_id": "gnce-demo-system-1"
+  },
+  "governance": {
+    "owner": "Policy & Compliance Team",
+    "roles_defined": true,
+    "risk_management": true,
+    "controls_enabled": true,
+    "incident_response_process": true,
+    "model_inventory": true,
+    "model_id": "gnce-demo-model-1",
+    "testing": {
+      "completed": true,
+      "last_tested_utc": "2026-01-04T20:38:10+00:00"
+    },
+    "eval_metrics": {
+      "primary": "accuracy",
+      "threshold": 0.8,
+      "observed": 0.92
+    },
+    "monitoring": {
+      "enabled": true,
+      "drift_monitoring": true
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "action": "TEST_HARMFUL_CONTENT",
+  "meta": {
+    "jurisdiction": "EU",
+    "is_vlop": true,
+    "customer_profile_id": "VLOP_SOCIAL_META"
+  },
+  "risk_indicators": {
+    "harmful_content_flag": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "action": "LIST_PRODUCT",
+  "content": "List a standard consumer item: 'Wireless mouse' (benign listing).",
+  "user_id": "user-ecommerce_marketplace_eu-demo",
+  "timestamp_utc": "2026-01-04T21:30:00+00:00",
+  "risk_indicators": {
+    "harmful_content_flag": false,
+    "violation_category": null,
+    "previous_violations": 0
+  },
+  "meta": {
+    "jurisdiction": "EU",
+    "customer_profile_id": "ECOMMERCE_MARKETPLACE_EU",
+    "customer_profile_ref": "profiles/ecommerce_marketplace_eu.json",
+    "customer_profile_hash_sha256": "sha256:525df30d81ffdd421e2f703eee872362030cb03f48e87bc7618c93eecc5f3050"
+  },
+  "industry_id": "ECOMMERCE",
+  "profile_id": "ECOMMERCE_MARKETPLACE_EU",
+  "listing": {
+    "product_id": "sku-1001",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 29.99,
+      "currency": "EUR"
+    },
+    "condition": "NEW"
+  }
+}

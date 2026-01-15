@@ -1,0 +1,29 @@
+{
+  "action": "INITIATE_TRANSFER",
+  "content": "Initiate a transfer that triggers AML/KYC risk (should be blocked/escalated).",
+  "user_id": "user-fintech_payments_eu-demo",
+  "timestamp_utc": "2026-01-04T21:36:00+00:00",
+  "risk_indicators": {
+    "harmful_content_flag": true,
+    "violation_category": "AML_RISK",
+    "previous_violations": 2,
+    "aml_risk_score": 0.92
+  },
+  "meta": {
+    "jurisdiction": "EU",
+    "customer_profile_id": "FINTECH_PAYMENTS_EU",
+    "customer_profile_ref": "profiles/fintech_payments_eu.json",
+    "customer_profile_hash_sha256": "sha256:5f5cd76f71af8a1e941ae4d1dd2e0e1dd94a822389f3e1729f9fe373bc988d77"
+  },
+  "industry_id": "FINTECH",
+  "profile_id": "FINTECH_PAYMENTS_EU",
+  "payment": {
+    "payment_id": "pay-7999",
+    "scheme": "SEPA",
+    "amount": {
+      "amount": 9500.0,
+      "currency": "EUR"
+    },
+    "beneficiary_country": "XX"
+  }
+}

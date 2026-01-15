@@ -1,0 +1,27 @@
+{
+  "action": "EXPORT_DATA",
+  "content": "Export sensitive tenant data to external destination without approval (should be blocked).",
+  "user_id": "user-saas_enterprise_global-demo",
+  "timestamp_utc": "2026-01-04T21:44:00+00:00",
+  "risk_indicators": {
+    "harmful_content_flag": true,
+    "violation_category": "UNAPPROVED_EXPORT",
+    "previous_violations": 2
+  },
+  "meta": {
+    "jurisdiction": "GLOBAL",
+    "customer_profile_id": "SAAS_ENTERPRISE_GLOBAL",
+    "customer_profile_ref": "profiles/saas_enterprise_global.json",
+    "customer_profile_hash_sha256": "sha256:d1f56a2c369c7a3b338ab9db040b7d547ce066c9a26589489d95948fa9449d52"
+  },
+  "industry_id": "SAAS_B2B",
+  "profile_id": "SAAS_ENTERPRISE_GLOBAL",
+  "tenant": {
+    "tenant_id": "t-500"
+  },
+  "export": {
+    "export_id": "exp-9002",
+    "destination": "EXTERNAL_URL",
+    "data_class": "SENSITIVE"
+  }
+}

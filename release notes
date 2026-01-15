@@ -1,0 +1,205 @@
+# 🚀 Gordian Nexus Constitutional Engine (GNCE)
+
+## **v0.6.1 — Release Candidate**
+
+**Release Date:** December 2025
+**Version:** v0.6.1-RC
+**Status:** Constitutional Kernel Stabilisation Release
+**Codename:** *Aegis* — the point at which the system becomes defensible
+
+---
+
+## Executive Summary
+
+GNCE v0.6.1 marks the **completion of the sovereign constitutional kernel** and the **stabilisation of the federated evidence plane**.
+
+This release transitions GNCE from an experimental governance engine into a **deterministic, contract-bound decision system** capable of operating independently, producing regulator-grade evidence, and safely federating that evidence without compromising decision integrity.
+
+> **Key outcome:**
+> GNCE decisions are now **deterministic, auditable, non-repudiable, and sovereign by construction**.
+
+---
+
+## 1️⃣ Constitutional Kernel — Complete
+
+### 1.1 Deterministic Decision Execution
+
+GNCE now guarantees that every governance request:
+
+1. Is evaluated deterministically
+2. Produces a complete **Auditable Decision Rationale Artifact (ADRA)**
+3. Either **ALLOWs**, **DENYs**, or **VETOs** execution based solely on codified constitutional logic
+
+No external system can influence the verdict.
+
+---
+
+### 1.2 Versioned Constitutional Contract
+
+Every ADRA produced by GNCE now conforms to a **versioned constitutional contract**, enforced at runtime:
+
+* `gnce_contract_version`
+* `adra_id`
+* `adra_hash` (SHA-256)
+* Canonical constitutional layers (L0–L7)
+* Mandatory verdict surface:
+  **`L1_the_verdict_and_constitutional_outcome`**
+
+Any deviation from this contract results in a **hard constitutional failure**.
+
+This guarantees **forward compatibility without silent breakage**.
+
+---
+
+## 2️⃣ Evidence & Audit Integrity
+
+### 2.1 Cryptographic Identity & Non-Repudiation
+
+Each ADRA is:
+
+* Canonically serialized
+* Cryptographically hashed
+* Immutable once produced
+
+The ADRA hash acts as a **global, content-addressed identifier**, enabling:
+
+* Replay
+* Verification
+* External audit
+* Legal defensibility
+
+---
+
+### 2.2 Chain-of-Custody Safety
+
+GNCE v0.6.1 guarantees:
+
+* Decisions are finalized **before** any export occurs
+* External failures cannot corrupt or alter internal state
+* Evidence generation is isolated from transport concerns
+
+---
+
+## 3️⃣ Federated Governance Plane — Stabilised
+
+### 3.1 Sovereign Federation Architecture
+
+GNCE now supports **controlled evidence federation** without compromising decision sovereignty.
+
+Federation modes include:
+
+* **OFF** — No external emission
+* **HASH_ONLY** — Minimal proof of decision
+* **REDACTED** — Sensitive fields removed
+* **FULL** — Complete constitutional record
+
+Federation behavior is governed by **sovereign configuration**, not UI state.
+
+---
+
+### 3.2 Non-Blocking by Design
+
+Federation sinks (HTTPS, S3, local vaults, etc.) are:
+
+* Strictly **non-blocking**
+* Fully isolated from the decision loop
+* Allowed to fail without impacting GNCE execution
+
+This ensures **regulatory safety under partial system failure**.
+
+---
+
+### 3.3 Cryptographic Idempotency
+
+GNCE enforces **single-emission per ADRA hash**:
+
+* Multiple execution paths
+* Multiple UI interactions
+* Multiple export attempts
+
+➡️ **One ADRA = one federated emission**
+
+This prevents duplication, replay abuse, and evidentiary ambiguity.
+
+---
+
+## 4️⃣ Operator & Regulator Tooling
+
+### 4.1 ADRA Inspection & Ledgering
+
+GNCE provides:
+
+* Session-level decision ledger
+* Article-level policy outcomes
+* Severity banding
+* Drift and veto visibility
+
+Operators and auditors can inspect decisions **without access to raw inputs**.
+
+---
+
+### 4.2 Regulator-Safe Views
+
+A regulator view mode ensures:
+
+* Sensitive identifiers are redacted
+* Constitutional outcomes remain intact
+* Decisions remain explainable and verifiable
+
+---
+
+## 5️⃣ Constitutional Smoke Test Gate (New)
+
+GNCE v0.6.1 introduces a **mandatory constitutional smoke test gate**.
+
+The gate verifies, on every release:
+
+* Deterministic ALLOW behavior
+* Binding DENY behavior for critical violations
+* Contract completeness
+* Federation non-blocking guarantees
+* Idempotent evidence emission
+
+A release **cannot proceed** if the gate fails.
+
+This creates a **self-defending governance system**.
+
+---
+
+## What v0.6.1 Is — and Is Not
+
+### ✅ v0.6.1 **IS**
+
+* A complete constitutional kernel
+* A sovereign decision system
+* A regulator-ready evidence engine
+* A stable foundation for scaling
+
+### ❌ v0.6.1 **IS NOT**
+
+* A demo
+* A prototype
+* A policy suggestion engine
+* A UI-driven system
+
+---
+
+## Forward Statement
+
+GNCE v0.6.1 establishes the **constitutional baseline**.
+
+All future versions will be evaluated against this release’s guarantees.
+No feature expansion will be allowed to weaken:
+
+* Determinism
+* Contract enforcement
+* Evidence integrity
+* Sovereign isolation
+
+---
+
+### Status Declaration
+
+> **GNCE v0.6.1-RC is approved as a constitutional reference release.**
+
+---

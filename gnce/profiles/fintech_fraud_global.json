@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "FINTECH_FRAUD_GLOBAL",
+  "display_name": "Fraud & Risk (Global baseline)",
+  "description": "Fraud/risk decisioning profile with strong logging, monitoring, and human oversight for adverse actions.",
+  "scope": {
+    "jurisdiction": "GLOBAL",
+    "enabled_regimes": [
+      "FINTECH_TRANSACTION_INTEGRITY",
+      "ISO_42001",
+      "NIST_AI_RMF"
+    ]
+  },
+  "enabled_domains": {
+    "ISO_42001": [
+      "AI_Management_System",
+      "Logging_Auditability",
+      "Incident_Response",
+      "Third_Party_Risk"
+    ],
+    "NIST_AI_RMF": [
+      "GOVERN",
+      "MAP",
+      "MEASURE",
+      "MANAGE"
+    ],
+    "FINTECH_TRANSACTION_INTEGRITY": [
+      "Fraud_Prevention",
+      "Transaction_Monitoring",
+      "Sanctions_Screening"
+    ]
+  },
+  "ui": {
+    "default_view": "summary",
+    "emphasis": "governance"
+  },
+  "stewardship": {
+    "owner_team": "Compliance",
+    "review_cadence": "quarterly",
+    "last_reviewed_utc": "2026-01-08T13:36:07Z"
+  },
+  "metadata": {
+    "notes": "Generated template profile. Tune domains/obligations to match your org\u2019s real controls."
+  },
+  "meta": {
+    "platform_classification": "FINTECH_PROVIDER",
+    "is_vlop": false,
+    "targets_minors": false
+  }
+}

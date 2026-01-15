@@ -1,0 +1,27 @@
+{
+  "action": "OPEN_ACCOUNT",
+  "content": "Open a new customer account with standard verification (benign).",
+  "user_id": "user-fintech_fraud_global-demo",
+  "timestamp_utc": "2026-01-04T21:37:00+00:00",
+  "risk_indicators": {
+    "harmful_content_flag": false,
+    "violation_category": null,
+    "previous_violations": 0
+  },
+  "meta": {
+    "jurisdiction": "GLOBAL",
+    "customer_profile_id": "FINTECH_FRAUD_GLOBAL",
+    "customer_profile_ref": "profiles/fintech_fraud_global.json",
+    "customer_profile_hash_sha256": "sha256:9baca90355207ccef774201ed317ee77d2de2cc4ee25f2ab1530805475943c07"
+  },
+  "industry_id": "FINTECH",
+  "profile_id": "FINTECH_FRAUD_GLOBAL",
+  "kyc": {
+    "method": "DOCUMENT",
+    "result": "PASS"
+  },
+  "account": {
+    "account_id": "acct-9001",
+    "country": "US"
+  }
+}

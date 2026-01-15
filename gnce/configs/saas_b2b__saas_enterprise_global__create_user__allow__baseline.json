@@ -1,0 +1,26 @@
+{
+  "action": "CREATE_USER",
+  "content": "Create a new user in enterprise tenant (benign).",
+  "user_id": "user-saas_enterprise_global-demo",
+  "timestamp_utc": "2026-01-04T21:43:00+00:00",
+  "risk_indicators": {
+    "harmful_content_flag": false,
+    "violation_category": null,
+    "previous_violations": 0
+  },
+  "meta": {
+    "jurisdiction": "GLOBAL",
+    "customer_profile_id": "SAAS_ENTERPRISE_GLOBAL",
+    "customer_profile_ref": "profiles/saas_enterprise_global.json",
+    "customer_profile_hash_sha256": "sha256:d1f56a2c369c7a3b338ab9db040b7d547ce066c9a26589489d95948fa9449d52"
+  },
+  "industry_id": "SAAS_B2B",
+  "profile_id": "SAAS_ENTERPRISE_GLOBAL",
+  "tenant": {
+    "tenant_id": "t-500"
+  },
+  "user": {
+    "new_user_id": "u-200",
+    "role": "STANDARD"
+  }
+}

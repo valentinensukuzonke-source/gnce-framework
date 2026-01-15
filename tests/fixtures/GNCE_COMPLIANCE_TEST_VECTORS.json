@@ -1,0 +1,50 @@
+{
+  "DSA": [
+    {
+      "name": "Benign listing",
+      "payload": {
+        "meta": {
+          "is_vlop": false
+        },
+        "risk_indicators": {
+          "harmful_content_flag": false
+        }
+      },
+      "expected": "ALLOW"
+    },
+    {
+      "name": "Illegal listing",
+      "payload": {
+        "meta": {
+          "is_vlop": false
+        },
+        "risk_indicators": {
+          "harmful_content_flag": true
+        }
+      },
+      "expected": "DENY"
+    }
+  ],
+  "DMA": [
+    {
+      "name": "Self-preferencing",
+      "payload": {
+        "risk_indicators": {
+          "harmful_content_flag": true
+        }
+      },
+      "expected": "DENY"
+    }
+  ],
+  "AI_ACT": [
+    {
+      "name": "High-risk AI unsafe",
+      "payload": {
+        "risk_indicators": {
+          "harmful_content_flag": true
+        }
+      },
+      "expected": "DENY"
+    }
+  ]
+}

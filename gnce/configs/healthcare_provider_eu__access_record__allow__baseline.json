@@ -1,0 +1,24 @@
+{
+  "action": "ACCESS_RECORD",
+  "content": "Access a record for care coordination with consent (benign; minimal metadata only).",
+  "user_id": "user-healthcare_provider_eu-demo",
+  "timestamp_utc": "2026-01-04T21:41:00+00:00",
+  "risk_indicators": {
+    "harmful_content_flag": false,
+    "violation_category": null,
+    "previous_violations": 0
+  },
+  "meta": {
+    "jurisdiction": "EU",
+    "customer_profile_id": "HEALTHCARE_PROVIDER_EU",
+    "customer_profile_ref": "profiles/healthcare_provider_eu.json",
+    "customer_profile_hash_sha256": "sha256:797b6dee68b4c195658d9ac5bdec033b4bd1a6c62a9e58a29f9bd2be7a8139c3"
+  },
+  "industry_id": "HEALTHCARE",
+  "profile_id": "HEALTHCARE_PROVIDER_EU",
+  "record_access": {
+    "record_id": "rec-1202",
+    "reason": "CARE_COORDINATION",
+    "consent": "PRESENT"
+  }
+}

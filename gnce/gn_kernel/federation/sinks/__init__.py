@@ -1,0 +1,1 @@
+# GNCE federation sinks package

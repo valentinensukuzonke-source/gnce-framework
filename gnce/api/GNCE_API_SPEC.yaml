@@ -1,0 +1,27 @@
+
+openapi: 3.0.0
+info:
+  title: GNCE Runtime Enforcement API
+  version: "0.7"
+paths:
+  /evaluate:
+    post:
+      summary: Evaluate and enforce constitutional obligations
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Enforcement decision
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  decision_outcome:
+                    type: string
+                  artifact:
+                    type: object

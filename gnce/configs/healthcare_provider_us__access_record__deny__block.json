@@ -1,0 +1,24 @@
+{
+  "action": "ACCESS_RECORD",
+  "content": "Attempt to access a patient record without proper authorization (should be blocked).",
+  "user_id": "user-healthcare_provider_us-demo",
+  "timestamp_utc": "2026-01-04T21:40:00+00:00",
+  "risk_indicators": {
+    "harmful_content_flag": true,
+    "violation_category": "UNAUTHORIZED_ACCESS",
+    "previous_violations": 1
+  },
+  "meta": {
+    "jurisdiction": "US",
+    "customer_profile_id": "HEALTHCARE_PROVIDER_US",
+    "customer_profile_ref": "profiles/healthcare_provider_us.json",
+    "customer_profile_hash_sha256": "sha256:80b0319e35411192e15275f958648d759a146ecc6b8dd2a57c4a8adb256ebd12"
+  },
+  "industry_id": "HEALTHCARE",
+  "profile_id": "HEALTHCARE_PROVIDER_US",
+  "record_access": {
+    "record_id": "rec-7788",
+    "reason": "UNKNOWN",
+    "break_glass": false
+  }
+}

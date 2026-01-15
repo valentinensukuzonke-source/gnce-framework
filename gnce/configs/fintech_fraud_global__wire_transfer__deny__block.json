@@ -1,0 +1,29 @@
+{
+  "action": "WIRE_TRANSFER",
+  "content": "High-risk transfer pattern flagged by fraud engine (should be blocked).",
+  "user_id": "user-fintech_fraud_global-demo",
+  "timestamp_utc": "2026-01-04T21:38:00+00:00",
+  "risk_indicators": {
+    "harmful_content_flag": true,
+    "violation_category": "FRAUD_HIGH_RISK",
+    "previous_violations": 4,
+    "fraud_risk_score": 0.97
+  },
+  "meta": {
+    "jurisdiction": "GLOBAL",
+    "customer_profile_id": "FINTECH_FRAUD_GLOBAL",
+    "customer_profile_ref": "profiles/fintech_fraud_global.json",
+    "customer_profile_hash_sha256": "sha256:9baca90355207ccef774201ed317ee77d2de2cc4ee25f2ab1530805475943c07"
+  },
+  "industry_id": "FINTECH",
+  "profile_id": "FINTECH_FRAUD_GLOBAL",
+  "payment": {
+    "payment_id": "pay-9900",
+    "scheme": "WIRE",
+    "amount": {
+      "amount": 25000.0,
+      "currency": "USD"
+    },
+    "beneficiary_country": "NG"
+  }
+}

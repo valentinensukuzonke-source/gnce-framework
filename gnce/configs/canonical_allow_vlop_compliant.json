@@ -1,0 +1,205 @@
+{
+  "timestamp_utc": "2026-01-04T21:30:00+00:00",
+  "action": "post_content",
+  "content": "Hello world — benign content.",
+  "user_id": "user_123",
+  "industry_id": "SOCIAL_MEDIA",
+  "profile_id": "VLOP_SOCIAL_META",
+  "meta": {
+    "jurisdiction": "EU"
+  },
+  "risk_indicators": {
+    "harmful_content_flag": false,
+    "violation_category": null,
+    "previous_violations": 0
+  },
+  "dsa": {
+    "systemic_risk_assessment": {
+      "completed": true,
+      "risk_vectors": [
+        "illegal_content_distribution",
+        "algorithmic_amplification",
+        "disinformation_spread",
+        "harm_to_minors"
+      ],
+      "assessment_methodology": "annual_systemic_risk_assessment_v1",
+      "last_assessed_utc": "2025-12-01T00:00:00Z"
+    },
+    "systemic_risk_mitigation": {
+      "mitigations": [
+        "downranking_borderline_content",
+        "trusted_flagger_priority_review",
+        "algorithmic_throttling_on_virality",
+        "enhanced_moderation_for_minors"
+      ],
+      "effectiveness_metrics": [
+        "illegal_content_removal_rate",
+        "time_to_action_sla",
+        "recidivism_rate"
+      ],
+      "monitoring_frequency": "continuous",
+      "responsible_team": "Trust & Safety"
+    },
+    "crisis_protocol": {
+      "defined": true,
+      "activation_conditions": [
+        "election_interference",
+        "public_health_emergency",
+        "terrorist_incident"
+      ],
+      "escalation_thresholds": {
+        "severity_score": ">=0.8",
+        "velocity_threshold": "viral_growth_rate"
+      },
+      "crisis_owner": "Head of Integrity",
+      "response_steps": [
+        "temporary_policy_overrides",
+        "emergency_moderation_scaling",
+        "regulator_notification"
+      ],
+      "post_crisis_review": true,
+      "last_tested_utc": "2025-11-15T00:00:00Z",
+      "runbook_version": "CRISIS-RUNBOOK-v3"
+    },
+    "researcher_data_access": "FULL",
+    "minors_protection": {
+      "age_assurance": {
+        "methods": [
+          "self_declaration",
+          "behavioral_signals"
+        ],
+        "confidence_threshold": 0.9
+      },
+      "recommender_constraints": {
+        "no_sensitive_topic_amplification": true,
+        "time_spent_limits": true
+      },
+      "harm_mitigation_measures": [
+        "content_downranking",
+        "guardian_controls",
+        "default_safety_settings"
+      ],
+      "monitoring_and_audit": {
+        "metrics": [
+          "minor_exposure_rate",
+          "complaints_from_guardians"
+        ],
+        "audit_frequency": "quarterly"
+      },
+      "minor_safe_mode_enforced": true,
+      "auditability": {
+        "minor_exposure_metrics_tracked": true,
+        "audit_frequency": "quarterly",
+        "last_audit_utc": "2025-12-10T00:00:00Z"
+      }
+    },
+    "illegal_content_detection_controls": true,
+    "trusted_flagger_process": true,
+    "transparency_reporting_ready": true,
+    "internal_complaint_system_available": true,
+    "out_of_court_body_recognised": true,
+    "non_profiling_option_exposed": true,
+    "systemic_risk_assessed": true,
+    "mitigation_measures_in_place": true,
+    "independent_audit_last_12m": true,
+    "crisis_protocol_defined": true,
+    "crisis_protocol_tested": true,
+    "minors_risk_programme": true,
+    "age_assurance_controls": true,
+    "transparency_report_published": true,
+    "researcher_data_access_details": null
+  },
+  "dma_profile": {
+    "is_gatekeeper": true,
+    "self_preferencing": false,
+    "anti_steering_restrictions": false,
+    "data_combination_without_consent": false,
+    "portability_supported": true,
+    "interoperability_supported": true,
+    "fair_ranking_practices": true,
+    "data_combining_without_consent": false,
+    "ranking_data_discrimination": false,
+    "bundling_detected": false,
+    "interoperability_refused": false,
+    "anti_steering_blocked": false
+  },
+  "ai_profile": {
+    "is_ai_system": true,
+    "high_risk_system": false,
+    "prohibited_practice": false,
+    "uses_recommender_system": true,
+    "transparency_notice": true,
+    "model_id": "rec-model-2025-11",
+    "system_id": "content-ranking-engine",
+    "eval": true,
+    "risk_management_system": true,
+    "data_governance": true,
+    "technical_documentation": true,
+    "logging": true,
+    "human_oversight": true,
+    "cybersecurity_controls": true,
+    "human_in_the_loop": true
+  },
+  "governance": {
+    "policy_documented": true,
+    "roles_defined": true,
+    "accountable_owner": "Chief Compliance Officer",
+    "risk_management_process": true,
+    "incident_response_process": true,
+    "audit_and_assurance": true,
+    "monitoring_metrics": true,
+    "continuous_improvement": true,
+    "risk_assessment": true,
+    "ai_policy": true,
+    "incident_process": true,
+    "inventory": true,
+    "measurement": true,
+    "model_inventory": true,
+    "testing": true,
+    "eval_metrics": true,
+    "monitoring": true,
+    "drift_monitoring": true,
+    "operational_controls": true,
+    "human_oversight": true
+  },
+  "platform_behavior": {
+    "dark_patterns_detected": false,
+    "gatekeeper_conduct": false,
+    "self_preference": false,
+    "forced_bundling": false,
+    "controls_enabled": true
+  },
+  "system_inventory": {
+    "system_name": "GNCE Social Recommender",
+    "system_version": "2025.12",
+    "model_id": "rec-model-2025-11",
+    "deployment_region": "EU",
+    "owner_team": "Trust & Safety"
+  },
+  "evaluation_evidence": {
+    "last_eval_utc": "2025-12-20T00:00:00Z",
+    "metrics": {
+      "policy_violation_precision": 0.94,
+      "policy_violation_recall": 0.91,
+      "minor_exposure_rate": 0.02
+    }
+  },
+  "data_ops": {
+    "combined_personal_data": false,
+    "portability_enabled": true
+  },
+  "partner_access": {
+    "blocked_data_access": false,
+    "ranking_data_restricted": false
+  },
+  "interoperability": {
+    "is_open": true
+  },
+  "ux": {
+    "switching_barriers": false
+  },
+  "audit": {
+    "dma_audit_completed": true,
+    "last_audit_date": "2025-11-01T00:00:00Z"
+  }
+}

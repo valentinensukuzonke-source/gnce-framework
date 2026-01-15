@@ -1,0 +1,257 @@
+{
+  "adra_id": "error-5e7512fcec074d1a",
+  "timestamp_utc": "2026-01-14T10:40:09+00:00",
+  "evaluation_id": "ab45b46c-c943-405e-9a45-e0d503901136",
+  "gnce_version": "0.7.2-RC",
+  "industry_id": "SOCIAL_MEDIA",
+  "profile_id": "VLOP_SOCIAL_META",
+  "enabled_regimes": [],
+  "decision_bundle_id": "bundle-ab45b46c-c943-405e-9a45-e0d503901136",
+  "kernel_execution_timeline": [
+    {
+      "ts_utc": "2026-01-14T10:40:08+00:00",
+      "stage": "REQUEST_RECEIVED",
+      "detail": "Evaluation ab45b46c-c943-405e-9a45-e0d503901136 received by GNCE sovereign kernel"
+    },
+    {
+      "ts_utc": "2026-01-14T10:40:08+00:00",
+      "stage": "L0_COMPLETED",
+      "detail": "validated=True issues_count=0"
+    },
+    {
+      "ts_utc": "2026-01-14T10:40:08+00:00",
+      "stage": "ROUTED_TO_PROFILE",
+      "detail": "industry_id=SOCIAL_MEDIA profile_id=VLOP_SOCIAL_META enabled_regimes=6"
+    },
+    {
+      "ts_utc": "2026-01-14T10:40:08+00:00",
+      "stage": "L2_SNAPSHOT_HASHED",
+      "detail": "input_hash=sha256:bb5834991b4..."
+    },
+    {
+      "ts_utc": "2026-01-14T10:40:09+00:00",
+      "stage": "L3_L4_COMPLETED",
+      "detail": "policies=8 blocking_failures=1"
+    },
+    {
+      "ts_utc": "2026-01-14T10:40:09+00:00",
+      "stage": "L1_VERDICT_COMPUTED",
+      "detail": "decision=DENY severity=CRITICAL"
+    },
+    {
+      "ts_utc": "2026-01-14T10:40:09+00:00",
+      "stage": "L5_CET_SIGNATURE_ATTACHED",
+      "detail": "content_hash=sha256:8918cbe2d68..."
+    },
+    {
+      "ts_utc": "2026-01-14T10:40:09+00:00",
+      "stage": "L6_DRIFT_EVALUATED",
+      "detail": "outcome=NO_DRIFT score=0.0"
+    },
+    {
+      "ts_utc": "2026-01-14T10:40:09+00:00",
+      "stage": "VETO_CORRECTIVE_SIGNAL_EMITTED",
+      "detail": "count=1"
+    },
+    {
+      "ts_utc": "2026-01-14T10:40:09+00:00",
+      "stage": "L7_VETO_EVALUATED",
+      "detail": "authorized=False veto_category=CONSTITUTIONAL_BLOCK evaluation_mode=STRICT"
+    },
+    {
+      "ts_utc": "2026-01-14T10:40:09+00:00",
+      "stage": "QUALITY_GATES_FAILED",
+      "detail": "failures=1"
+    }
+  ],
+  "error": {
+    "message": "Kernel critical error: 'not_applicable'",
+    "issues": [
+      "Critical kernel failure: 'not_applicable'",
+      "Traceback (most recent call last):\n  File \"C:\\Users\\Valentine Nsukuzonke\\Pictures\\MY IP\\Meta Pitch Deck\\GNCE v0.7.2-RC\\gnce\\gn_kernel\\kernel.py\", line 3514, in run_gn_kernel\n    telemetry_summary = _TELEMETRY.get_summary()\n  File \"C:\\Users\\Valentine Nsukuzonke\\Pictures\\MY IP\\Meta Pitch Deck\\GNCE v0.7.2-RC\\gnce\\gn_kernel\\kernel.py\", line 1710, in get_summary\n    coverage_summary[regime_key][status.lower()] += count\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^\nKeyError: 'not_applicable'\n"
+    ],
+    "timestamp": "2026-01-14T10:40:09+00:00"
+  },
+  "L0_structural_validation": {
+    "layer": "L0",
+    "title": "Emergency Error Handler",
+    "validated": false,
+    "issues": [
+      "Critical kernel failure: 'not_applicable'",
+      "Traceback (most recent call last):\n  File \"C:\\Users\\Valentine Nsukuzonke\\Pictures\\MY IP\\Meta Pitch Deck\\GNCE v0.7.2-RC\\gnce\\gn_kernel\\kernel.py\", line 3514, in run_gn_kernel\n    telemetry_summary = _TELEMETRY.get_summary()\n  File \"C:\\Users\\Valentine Nsukuzonke\\Pictures\\MY IP\\Meta Pitch Deck\\GNCE v0.7.2-RC\\gnce\\gn_kernel\\kernel.py\", line 1710, in get_summary\n    coverage_summary[regime_key][status.lower()] += count\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^\nKeyError: 'not_applicable'\n"
+    ],
+    "severity": "CRITICAL",
+    "evidence": {
+      "payload_summary": {
+        "action": "POST_CONTENT",
+        "jurisdiction": "EU",
+        "keys_present": [
+          "action",
+          "content",
+          "user_id",
+          "timestamp_utc",
+          "risk_indicators",
+          "industry_id",
+          "profile_id",
+          "meta"
+        ]
+      }
+    },
+    "decision_gate": {
+      "allow_downstream": false,
+      "block_reason": "Kernel critical error: 'not_applicable'"
+    }
+  },
+  "L1_the_verdict_and_constitutional_outcome": {
+    "layer": "L1",
+    "title": "Emergency Verdict",
+    "validated": false,
+    "decision_outcome": "ERROR",
+    "severity": "CRITICAL",
+    "rationale": "Kernel encountered a critical error before producing a reliable decision.",
+    "constitutional": {
+      "clause": "GNCE Emergency Clause \u2014 Kernel failure requires immediate human intervention.",
+      "justification": "Kernel critical error: 'not_applicable'"
+    },
+    "evidence": {
+      "error": "Kernel critical error: 'not_applicable'"
+    },
+    "summary": {
+      "satisfied": 0,
+      "violated": 0
+    }
+  },
+  "L2_input_snapshot_and_provenance": {
+    "layer": "L2",
+    "title": "Input Snapshot & Deterministic Record Anchor (DRA)",
+    "validated": false,
+    "issues": [
+      "Emergency path: input snapshot may be partial."
+    ],
+    "severity": "HIGH",
+    "input_snapshot": {
+      "action": "POST_CONTENT",
+      "content": "Let's organize a protest with violence and weapons",
+      "user_id": "user123",
+      "timestamp_utc": "2024-01-15T10:30:00Z",
+      "risk_indicators": {
+        "harmful_content_flag": true,
+        "violation_category": "extremism",
+        "previous_violations": 2
+      },
+      "industry_id": "SOCIAL_MEDIA",
+      "profile_id": "VLOP_SOCIAL_META",
+      "meta": {
+        "jurisdiction": "EU",
+        "is_vlop": true,
+        "platform_classification": "VLOP"
+      }
+    },
+    "input_hash_sha256": "sha256:12eda9b3217ed3605c96a428ee1bfe7d7ddc11d41002b87debe733bf5cefd2cf",
+    "provenance": {
+      "received_at_utc": "2026-01-14T10:40:09+00:00",
+      "evaluation_id": "ab45b46c-c943-405e-9a45-e0d503901136"
+    },
+    "decision_gate": {
+      "allow_downstream": false,
+      "block_reason": "Kernel critical error: 'not_applicable'"
+    }
+  },
+  "L3_deterministic_rule_engine": {
+    "layer": "L3",
+    "title": "Deterministic Rule Engine (DRE)",
+    "validated": false,
+    "issues": [
+      "Emergency path: rules not evaluated."
+    ],
+    "severity": "HIGH",
+    "summary": {
+      "total_rules": 0,
+      "passed": 0,
+      "failed": 0,
+      "blocking_failures": 0
+    },
+    "decision_gate": {
+      "allow_downstream": false,
+      "block_reason": "Kernel critical error: 'not_applicable'"
+    }
+  },
+  "L4_policy_lineage_and_constitution": {
+    "layer": "L4",
+    "title": "Policy Lineage & Constitution Binding",
+    "validated": false,
+    "issues": [
+      "Emergency path: policy lineage not computed."
+    ],
+    "severity": "HIGH",
+    "policies_triggered": [],
+    "constitution_hash": null,
+    "decision_gate": {
+      "allow_downstream": false,
+      "block_reason": "Kernel critical error: 'not_applicable'"
+    }
+  },
+  "L5_integrity_and_tokenization": {
+    "layer": "L5",
+    "title": "CET Integrity & Tokenization",
+    "validated": false,
+    "issues": [
+      "Emergency path: integrity tokens not generated."
+    ],
+    "severity": "HIGH",
+    "content_hash_sha256": null,
+    "cet_tokens": [],
+    "decision_gate": {
+      "allow_downstream": false,
+      "block_reason": "Kernel critical error: 'not_applicable'"
+    }
+  },
+  "L6_execution_trace_and_sars": {
+    "layer": "L6",
+    "title": "Execution Trace & SARS Evidence",
+    "validated": false,
+    "issues": [
+      "Emergency path: no execution trace."
+    ],
+    "severity": "HIGH",
+    "sars_entries": [],
+    "decision_gate": {
+      "allow_downstream": false,
+      "block_reason": "Kernel critical error: 'not_applicable'"
+    }
+  },
+  "L7_veto_and_execution_feedback": {
+    "layer": "L7",
+    "title": "Emergency Veto",
+    "validated": false,
+    "execution_authorized": false,
+    "veto_triggered": true,
+    "veto_category": "CRITICAL_ERROR",
+    "escalation_required": "IMMEDIATE_HUMAN_REVIEW",
+    "veto_layer": "KERNEL",
+    "origin_layer": "KERNEL",
+    "trigger_layer": "KERNEL",
+    "clause": "GNCE Emergency Clause \u2014 Kernel failure requires immediate human intervention.",
+    "veto_basis": [
+      {
+        "article": "KERNEL.FAILURE",
+        "status": "VIOLATED",
+        "explanation": "Kernel critical error: 'not_applicable'"
+      }
+    ],
+    "severity": "CRITICAL",
+    "issues": [
+      "Critical kernel failure: 'not_applicable'",
+      "Traceback (most recent call last):\n  File \"C:\\Users\\Valentine Nsukuzonke\\Pictures\\MY IP\\Meta Pitch Deck\\GNCE v0.7.2-RC\\gnce\\gn_kernel\\kernel.py\", line 3514, in run_gn_kernel\n    telemetry_summary = _TELEMETRY.get_summary()\n  File \"C:\\Users\\Valentine Nsukuzonke\\Pictures\\MY IP\\Meta Pitch Deck\\GNCE v0.7.2-RC\\gnce\\gn_kernel\\kernel.py\", line 1710, in get_summary\n    coverage_summary[regime_key][status.lower()] += count\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^\nKeyError: 'not_applicable'\n"
+    ]
+  },
+  "governance_context": {
+    "emergency_mode": true,
+    "error": "Kernel critical error: 'not_applicable'",
+    "timestamp": "2026-01-14T10:40:09+00:00"
+  },
+  "emergency": true,
+  "constitution_hash": "sha256:EMERGENCY_ERROR_ADRA",
+  "adra_hash": "sha256:bf3195d202b59a5170958e374cd14654db51d67e9de92cf3b3431c202d49870a",
+  "critical_error": true
+}

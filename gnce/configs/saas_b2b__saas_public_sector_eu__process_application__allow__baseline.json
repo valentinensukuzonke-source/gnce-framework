@@ -1,0 +1,24 @@
+{
+  "action": "PROCESS_APPLICATION",
+  "content": "Process a public-sector application (benign).",
+  "user_id": "user-saas_public_sector_eu-demo",
+  "timestamp_utc": "2026-01-04T21:45:00+00:00",
+  "risk_indicators": {
+    "harmful_content_flag": false,
+    "violation_category": null,
+    "previous_violations": 0
+  },
+  "meta": {
+    "jurisdiction": "EU",
+    "customer_profile_id": "SAAS_PUBLIC_SECTOR_EU",
+    "customer_profile_ref": "profiles/saas_public_sector_eu.json",
+    "customer_profile_hash_sha256": "sha256:17f847529e14380fb8e86982c3f848cf620da3f95f5c48076f8ede1746d413ec"
+  },
+  "industry_id": "SAAS_B2B",
+  "profile_id": "SAAS_PUBLIC_SECTOR_EU",
+  "case": {
+    "case_id": "case-8001",
+    "type": "BENEFITS_APPLICATION",
+    "stage": "INITIAL_REVIEW"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "HEALTHCARE_PROVIDER_EU",
+  "display_name": "EU Healthcare Provider (AI Act alignment baseline)",
+  "description": "EU healthcare provider profile aligned to AI Act governance expectations for clinical/triage systems.",
+  "scope": {
+    "jurisdiction": "EU",
+    "enabled_regimes": [
+      "EU_AI_ACT",
+      "ISO_42001",
+      "NIST_AI_RMF"
+    ]
+  },
+  "enabled_domains": {
+    "EU_AI_ACT": [
+      "Risk_Management_System",
+      "Data_Governance",
+      "Human_Oversight",
+      "Technical_Documentation",
+      "Logging"
+    ],
+    "ISO_42001": [
+      "AI_Management_System",
+      "Clinical_Safety",
+      "Logging_Auditability",
+      "Incident_Response"
+    ],
+    "NIST_AI_RMF": [
+      "GOVERN",
+      "MAP",
+      "MEASURE",
+      "MANAGE"
+    ]
+  },
+  "ui": {
+    "default_view": "summary",
+    "emphasis": "governance"
+  },
+  "stewardship": {
+    "owner_team": "Compliance",
+    "review_cadence": "quarterly",
+    "last_reviewed_utc": "2026-01-08T13:36:07Z"
+  },
+  "metadata": {
+    "notes": "Generated template profile. Tune domains/obligations to match your org’s real controls."
+  },
+  "meta": {
+    "platform_classification": "HEALTHCARE_PROVIDER",
+    "is_vlop": false,
+    "targets_minors": false
+  }
+}

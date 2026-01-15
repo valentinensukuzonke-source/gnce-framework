@@ -1,0 +1,24 @@
+{
+  "action": "SCHEDULE_APPOINTMENT",
+  "content": "Schedule a routine appointment (no sensitive data).",
+  "user_id": "user-healthcare_provider_us-demo",
+  "timestamp_utc": "2026-01-04T21:39:00+00:00",
+  "risk_indicators": {
+    "harmful_content_flag": false,
+    "violation_category": null,
+    "previous_violations": 0
+  },
+  "meta": {
+    "jurisdiction": "US",
+    "customer_profile_id": "HEALTHCARE_PROVIDER_US",
+    "customer_profile_ref": "profiles/healthcare_provider_us.json",
+    "customer_profile_hash_sha256": "sha256:80b0319e35411192e15275f958648d759a146ecc6b8dd2a57c4a8adb256ebd12"
+  },
+  "industry_id": "HEALTHCARE",
+  "profile_id": "HEALTHCARE_PROVIDER_US",
+  "appointment": {
+    "appointment_id": "apt-1101",
+    "department": "PRIMARY_CARE",
+    "requested_date": "2026-01-10"
+  }
+}

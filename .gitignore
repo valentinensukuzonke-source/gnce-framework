@@ -1,0 +1,30 @@
+# Python compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Logs and data
+*.log
+logs/
+adra_logs/
+data/
+received_federation/
+
+# Backup files
+*.backup
+*.backup*
+*backup*
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

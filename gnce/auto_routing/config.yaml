@@ -1,0 +1,70 @@
+# gnce/auto_routing/config.yaml
+version: "1.0"
+
+# Field patterns for industry detection
+field_patterns:
+  healthcare:
+    - ["patient_id", "medical_record"]
+    - ["diagnosis_code", "patient.name"]
+    - ["healthcare_provider", "treatment_plan"]
+  
+  fintech_payments:
+    - ["transaction_id", "amount", "currency"]
+    - ["iban", "swift_code", "routing_number"]
+    - ["payment_method", "billing_address"]
+  
+  ecommerce:
+    - ["order_id", "sku", "quantity"]
+    - ["cart", "shipping_address", "total_amount"]
+    - ["product_price", "tax_amount", "discount_code"]
+  
+  saas_b2b:
+    - ["tenant_id", "subscription_tier"]
+    - ["organization_id", "api_key", "feature_flags"]
+    - ["user.organization", "billing.plan"]
+  
+  vlop_social:
+    - ["user_generated_content", "post_id"]
+    - ["recommender_system", "ad_targeting"]
+    - ["content_moderation", "engagement_metrics"]
+
+# Profile mappings
+profile_mappings:
+  healthcare:
+    EU: "HEALTHCARE_PROVIDER_EU"
+    US: "HEALTHCARE_PROVIDER_US"
+    default: "HEALTHCARE_PROVIDER_EU"
+    customer_profile: "hipaa_compliant_customer"
+  
+  fintech_payments:
+    EU: "FINTECH_PAYMENTS_EU"
+    default: "FINTECH_FRAUD_GLOBAL"
+    customer_profile: "pci_audited_customer"
+  
+  ecommerce:
+    EU: "ECOMMERCE_MARKETPLACE_EU"
+    default: "ECOMMERCE_RETAIL_GLOBAL"
+    customer_profile: "standard_consumer"
+  
+  saas_b2b:
+    EU: "SAAS_PUBLIC_SECTOR_EU"
+    default: "SAAS_ENTERPRISE_GLOBAL"
+    customer_profile: "enterprise_customer"
+  
+  vlop_social:
+    default: "VLOP_SOCIAL_META"
+    customer_profile: "social_media_user"
+
+# UI settings
+ui:
+  auto_select_confidence_threshold: "high"  # high|medium|low
+  show_suggestions: true
+  allow_auto_select_toggle: true
+  show_debug_info: false
+  suggestion_timeout_ms: 2000
+
+# Confidence scoring
+confidence_scoring:
+  high_threshold: 0.8
+  medium_threshold: 0.5
+  required_field_match_ratio: 0.7

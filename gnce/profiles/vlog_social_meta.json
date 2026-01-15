@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "VLOP_SOCIAL_META",
+  "display_name": "VLOP – Social Media (Meta)",
+  "description": "Large consumer social platform with recommender systems and ads.",
+  "scope": {
+    "enabled_regimes": [
+      "DSA",
+      "DMA",
+      "EU_AI_ACT",
+      "ISO_42001",
+      "NIST_AI_RMF"
+    ],
+    "enabled_domains": {
+      "DSA": [
+        "CONTENT_SAFETY",
+        "RECOMMENDER_TRANSPARENCY",
+        "ILLEGAL_CONTENT",      
+        "MITIGATION_MEASURES",  
+        "CRISIS_RESPONSE",      
+        "RISK_ASSESSMENT",      
+        "TRANSPARENCY",         
+        "COMPLAINTS"           
+      ],
+      "EU_AI_ACT": [
+        "PROHIBITED_PRACTICES",
+        "HIGH_RISK_CONTROLS"
+      ]
+    }
+  },
+  "ui": {
+    "default_view": "ledger",
+    "show_admin_tools": false,
+    "regime_order": [
+      "DSA",
+      "DMA",
+      "EU_AI_ACT",
+      "ISO_42001",
+      "NIST_AI_RMF"
+    ]
+  },
+  "stewardship": {
+    "organizational_owner": "Policy & Integrity",
+    "human_review_pool": "Trust & Safety Review"
+  },
+  "metadata": {
+    "customer_id": "meta_demo",
+    "region": "EU",
+    "created_at_utc": "2026-01-03T00:00:00Z"
+  },
+  "meta": {
+    "platform_classification": "VLOP_SOCIAL_PLATFORM",
+    "is_vlop": true,
+    "targets_minors": true
+  }
+}

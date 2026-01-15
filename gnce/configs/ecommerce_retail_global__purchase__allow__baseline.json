@@ -1,0 +1,30 @@
+{
+  "action": "PURCHASE",
+  "content": "Retail purchase of everyday goods (benign).",
+  "user_id": "user-ecommerce_retail_global-demo",
+  "timestamp_utc": "2026-01-04T21:33:00+00:00",
+  "risk_indicators": {
+    "harmful_content_flag": false,
+    "violation_category": null,
+    "previous_violations": 0
+  },
+  "meta": {
+    "jurisdiction": "GLOBAL",
+    "customer_profile_id": "ECOMMERCE_RETAIL_GLOBAL",
+    "customer_profile_ref": "profiles/ecommerce_retail_global.json",
+    "customer_profile_hash_sha256": "sha256:41a0298ede4d2a6dc8fbc7a1fd805396831065a84d4174a4746185b582f75584"
+  },
+  "industry_id": "ECOMMERCE",
+  "profile_id": "ECOMMERCE_RETAIL_GLOBAL",
+  "order": {
+    "order_id": "ord-3001",
+    "items": [
+      {
+        "product_id": "sku-501",
+        "qty": 2
+      }
+    ],
+    "payment_method": "CARD",
+    "ship_to_country": "ZA"
+  }
+}

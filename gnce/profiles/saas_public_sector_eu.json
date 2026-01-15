@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "SAAS_PUBLIC_SECTOR_EU",
+  "display_name": "Public Sector SaaS (EU baseline)",
+  "description": "EU public-sector SaaS profile emphasizing transparency, procurement-grade audit trails, and AI Act alignment.",
+  "scope": {
+    "jurisdiction": "EU",
+    "enabled_regimes": [
+      "EU_AI_ACT",
+      "ISO_42001",
+      "NIST_AI_RMF"
+    ]
+  },
+  "enabled_domains": {
+    "EU_AI_ACT": [
+      "Transparency_Notice",
+      "Risk_Management_System",
+      "Human_Oversight",
+      "Cybersecurity_Controls"
+    ],
+    "ISO_42001": [
+      "AI_Management_System",
+      "Logging_Auditability",
+      "Supplier_Assurance",
+      "Incident_Response"
+    ],
+    "NIST_AI_RMF": [
+      "GOVERN",
+      "MAP",
+      "MEASURE",
+      "MANAGE"
+    ]
+  },
+  "ui": {
+    "default_view": "summary",
+    "emphasis": "governance"
+  },
+  "stewardship": {
+    "owner_team": "Compliance",
+    "review_cadence": "quarterly",
+    "last_reviewed_utc": "2026-01-08T13:36:07Z"
+  },
+  "metadata": {
+    "notes": "Generated template profile. Tune domains/obligations to match your org’s real controls."
+  },
+  "meta": {
+    "platform_classification": "SAAS_PUBLIC_SECTOR",
+    "is_vlop": false,
+    "targets_minors": false
+  }
+}

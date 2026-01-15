@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "SAAS_ENTERPRISE_GLOBAL",
+  "display_name": "Enterprise SaaS (global baseline)",
+  "description": "Enterprise SaaS profile focusing on auditability, change management, and monitoring for AI-assisted features.",
+  "scope": {
+    "jurisdiction": "GLOBAL",
+    "enabled_regimes": [
+      "ISO_42001",
+      "NIST_AI_RMF"
+    ]
+  },
+  "enabled_domains": {
+    "ISO_42001": [
+      "AI_Management_System",
+      "Change_Management",
+      "Logging_Auditability",
+      "Access_Control"
+    ],
+    "NIST_AI_RMF": [
+      "GOVERN",
+      "MAP",
+      "MEASURE",
+      "MANAGE"
+    ]
+  },
+  "ui": {
+    "default_view": "summary",
+    "emphasis": "governance"
+  },
+  "stewardship": {
+    "owner_team": "Compliance",
+    "review_cadence": "quarterly",
+    "last_reviewed_utc": "2026-01-08T13:36:07Z"
+  },
+  "metadata": {
+    "notes": "Generated template profile. Tune domains/obligations to match your org’s real controls."
+  },
+  "meta": {
+    "platform_classification": "SAAS_B2B",
+    "is_vlop": false,
+    "targets_minors": false
+  }
+}

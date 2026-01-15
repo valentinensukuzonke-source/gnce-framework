@@ -1,0 +1,28 @@
+{
+  "action": "INITIATE_TRANSFER",
+  "content": "Initiate a SEPA transfer to a known beneficiary (benign).",
+  "user_id": "user-fintech_payments_eu-demo",
+  "timestamp_utc": "2026-01-04T21:35:00+00:00",
+  "risk_indicators": {
+    "harmful_content_flag": false,
+    "violation_category": null,
+    "previous_violations": 0
+  },
+  "meta": {
+    "jurisdiction": "EU",
+    "customer_profile_id": "FINTECH_PAYMENTS_EU",
+    "customer_profile_ref": "profiles/fintech_payments_eu.json",
+    "customer_profile_hash_sha256": "sha256:5f5cd76f71af8a1e941ae4d1dd2e0e1dd94a822389f3e1729f9fe373bc988d77"
+  },
+  "industry_id": "FINTECH",
+  "profile_id": "FINTECH_PAYMENTS_EU",
+  "payment": {
+    "payment_id": "pay-7001",
+    "scheme": "SEPA",
+    "amount": {
+      "amount": 50.0,
+      "currency": "EUR"
+    },
+    "beneficiary_country": "FR"
+  }
+}

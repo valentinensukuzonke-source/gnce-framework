@@ -1,0 +1,30 @@
+{
+  "action": "PURCHASE",
+  "content": "Purchase a benign item with standard checkout.",
+  "user_id": "user-ecommerce_marketplace_eu-demo",
+  "timestamp_utc": "2026-01-04T21:32:00+00:00",
+  "risk_indicators": {
+    "harmful_content_flag": false,
+    "violation_category": null,
+    "previous_violations": 0
+  },
+  "meta": {
+    "jurisdiction": "EU",
+    "customer_profile_id": "ECOMMERCE_MARKETPLACE_EU",
+    "customer_profile_ref": "profiles/ecommerce_marketplace_eu.json",
+    "customer_profile_hash_sha256": "sha256:525df30d81ffdd421e2f703eee872362030cb03f48e87bc7618c93eecc5f3050"
+  },
+  "industry_id": "ECOMMERCE",
+  "profile_id": "ECOMMERCE_MARKETPLACE_EU",
+  "order": {
+    "order_id": "ord-2001",
+    "items": [
+      {
+        "product_id": "sku-1001",
+        "qty": 1
+      }
+    ],
+    "payment_method": "CARD",
+    "ship_to_country": "DE"
+  }
+}

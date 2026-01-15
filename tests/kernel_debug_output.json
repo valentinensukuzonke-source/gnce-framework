@@ -1,0 +1,3935 @@
+{
+  "gnce_contract_version": "1.1",
+  "finalized": false,
+  "adra_version": "0.5",
+  "adra_id": "adra-771a862484b7454b82",
+  "GNCE_version": "0.7.2-RC",
+  "created_at_utc": "2026-01-14T10:33:08.394809+00:00",
+  "drift_outcome": "NO_DRIFT",
+  "drift_score": 0.0,
+  "L0_pre_execution_validation": {
+    "layer": "L0",
+    "title": "Pre-Execution Constitutional Validation",
+    "validated": true,
+    "issues": [],
+    "severity": "LOW",
+    "constitutional": {
+      "clause": "GNCE Sec. 0.1 — Inputs must be structurally valid JSON objects.",
+      "justification": "L0 verifies structural integrity before downstream layers execute.",
+      "explainability": {
+        "why_required": "GNCE must guarantee deterministic inputs.",
+        "impact": "If L0 fails, downstream computation must be blocked."
+      }
+    },
+    "checks": [
+      {
+        "check_id": "L0.JSON_OBJECT",
+        "description": "Payload is a JSON object (dict).",
+        "pass": true,
+        "observed": "dict"
+      },
+      {
+        "check_id": "L0.KEYS_CAPTURED",
+        "description": "Payload keys captured for evidence.",
+        "pass": true,
+        "observed": "keys=14"
+      }
+    ],
+    "evidence": {
+      "input_shape": "dict",
+      "keys_present": [
+        "action",
+        "content",
+        "user_id",
+        "timestamp_utc",
+        "risk_indicators",
+        "meta",
+        "industry_id",
+        "profile_id",
+        "platform_behavior",
+        "dsa",
+        "dma_profile",
+        "audit",
+        "ai_profile",
+        "governance"
+      ],
+      "issues_count": 0,
+      "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+    },
+    "decision_gate": {
+      "allow_downstream": true,
+      "block_reason": null
+    }
+  },
+  "L1_the_verdict_and_constitutional_outcome": {
+    "layer": "L1",
+    "title": "The Verdict & Constitutional Outcome",
+    "decision_outcome": "ALLOW",
+    "severity": "LOW",
+    "human_oversight_required": false,
+    "safe_state_triggered": false,
+    "timestamp_utc": "2026-01-04T20:38:10+00:00",
+    "engine_version": "0.7.2-RC",
+    "rationale": "Execution authorized: no violations detected across executed regimes.",
+    "summary": {
+      "policies_considered": 0,
+      "violated": 0,
+      "satisfied": 0,
+      "not_applicable": 0,
+      "unknown": 0,
+      "blocking_violations": 0,
+      "highest_severity_any": "LOW",
+      "highest_severity_violation": "LOW"
+    },
+    "human_readable_outcome": "ALLOW — Constitutional outcome at LOW severity.",
+    "because": [
+      "No violations detected; evaluated obligations are satisfied or not applicable."
+    ],
+    "regulator_summary": "Outcome: ALLOW. Severity: LOW. Blocking violations: 0. Total violations: 0. Policies considered: 0.",
+    "recommended_actions": [
+      "Proceed with execution.",
+      "Persist ADRA to SARS session ledger and export (if enabled).",
+      "Monitor drift signals (L6) over the next N runs; escalate if DRIFT_ALERT appears.",
+      "Sample this decision for periodic QA if the incident type is sensitive."
+    ],
+    "constitutional": {
+      "clause": "GNCE Sec. 1.0 — Verdict must be derived deterministically from binding obligations.",
+      "justification": "L1 adjudicates L4 policy lineage into a sovereign decision.",
+      "explainability": {
+        "headline": "ALLOW — no blocking constitutional violations detected.",
+        "impact": "Downstream layers bind to this verdict for integrity, drift and veto enforcement."
+      }
+    },
+    "evidence": {
+      "engine_version": "0.7.2-RC",
+      "policy_counts": {
+        "total": 0,
+        "violated": 0,
+        "satisfied": 0,
+        "not_applicable": 0
+      },
+      "evaluation_mode": "STRICT"
+    },
+    "decision_gate": {
+      "decision_outcome": "ALLOW",
+      "severity": "LOW",
+      "human_oversight_required": false,
+      "safe_state_triggered": false
+    }
+  },
+  "L2_input_snapshot_and_dra": {
+    "layer": "L2",
+    "title": "Input Snapshot & Deterministic Record Anchor (DRA)",
+    "validated": true,
+    "issues": [],
+    "severity": "LOW",
+    "input_snapshot": {},
+    "input_hash_sha256": "sha256:a1cd5ccd8706d47498a36a50aae93b9285eefd8a98fcb93547af7b35c72d7095",
+    "provenance": {
+      "received_at_utc": "2026-01-04T20:38:10+00:00",
+      "format_valid": true,
+      "fields_present": [
+        "action",
+        "content",
+        "user_id",
+        "timestamp_utc",
+        "risk_indicators",
+        "meta",
+        "industry_id",
+        "profile_id",
+        "platform_behavior",
+        "dsa",
+        "dma_profile",
+        "audit",
+        "ai_profile",
+        "governance"
+      ],
+      "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+    },
+    "constitutional": {
+      "clause": "GNCE Sec. 2.2 — Every ADRA must bind to a deterministic input hash.",
+      "explainability": {
+        "headline": "INPUT BOUND — payload is cryptographically anchored to this ADRA.",
+        "impact": "The hash is carried into L5 CET integrity tokens."
+      }
+    },
+    "checks": [
+      {
+        "check_id": "L2.INPUT_HASH_PRESENT",
+        "description": "Input hash computed.",
+        "pass": true,
+        "observed": "sha256:a1cd5ccd8706d47498a36a50a..."
+      },
+      {
+        "check_id": "L2.PROVENANCE_CAPTURED",
+        "description": "Provenance captured.",
+        "pass": true,
+        "observed": "2026-01-04T20:38:10+00:00"
+      }
+    ],
+    "evidence": {
+      "input_shape": "dict",
+      "keys_present": [
+        "action",
+        "content",
+        "user_id",
+        "timestamp_utc",
+        "risk_indicators",
+        "meta",
+        "industry_id",
+        "profile_id",
+        "platform_behavior",
+        "dsa",
+        "dma_profile",
+        "audit",
+        "ai_profile",
+        "governance"
+      ],
+      "received_at_utc": "2026-01-04T20:38:10+00:00",
+      "input_hash": "sha256:a1cd5ccd8706d47498a36a50aae93b9285eefd8a98fcb93547af7b35c72d7095"
+    },
+    "decision_gate": {
+      "allow_downstream": true,
+      "block_reason": null
+    }
+  },
+  "L3_rule_level_trace": {
+    "layer": "L3",
+    "title": "Deterministic Rule Engine (DRE)",
+    "validated": false,
+    "issues": [
+      "L3 evaluation error: name 're' is not defined"
+    ],
+    "severity": "HIGH",
+    "summary": {
+      "error": "name 're' is not defined",
+      "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+    },
+    "causal_trace": [],
+    "constitutional": {
+      "clause": "GNCE Sec. 3.4 — Rule-level explainability must be available for regulators."
+    },
+    "checks": [],
+    "evidence": {
+      "error": "name 're' is not defined",
+      "traceback": "HIDDEN"
+    },
+    "decision_gate": {
+      "allow_downstream": false,
+      "block_reason": "L3 error: name 're' is not defined"
+    }
+  },
+  "L4_policy_lineage_and_constitution": {
+    "layer": "L4",
+    "title": "Policy Lineage & Constitutional Authority",
+    "validated": false,
+    "issues": [
+      "L4 evaluation error: name 're' is not defined"
+    ],
+    "severity": "HIGH",
+    "policies_triggered": [],
+    "policy_lineage": [],
+    "constitutional": {
+      "clause": "GNCE Sec. 4.0 — Policy lineage must deterministically link rules to obligations."
+    },
+    "checks": [],
+    "evidence": {
+      "error": "name 're' is not defined"
+    },
+    "decision_gate": {
+      "allow_downstream": false,
+      "block_reason": "L4 error: name 're' is not defined"
+    }
+  },
+  "L5_integrity_and_tokenization": {
+    "layer": "L5",
+    "title": "Integrity & Cryptographic Execution Token (CET)",
+    "validated": true,
+    "issues": [],
+    "severity": "LOW",
+    "content_hash_sha256": "sha256:063a91ba0a5c28ab4bae79488f2273fc1b7654f8ab33bfb87cb19e635f738f99",
+    "nonce": "b3e6f4229bb42a16a11b696b3f3076028b4b66383ac5c093a24680f92e4a5bb6",
+    "pseudo_signature_sha256": "sha256:b45c77ed588356dcc8654e227366e2b5d322f5a9bdefebecfc9fb62d28b92955",
+    "signing_strategy": "GNCE_v0.4_pseudo_signature",
+    "constitutional": {
+      "clause": "GNCE Sec. 5.1 — Constitutional decisions must be integrity-bound via CET.",
+      "explainability": {
+        "headline": "CET SIGNED — constitutional substrate is integrity-bound (non-repudiable)."
+      }
+    },
+    "checks": [
+      {
+        "check_id": "L5.CONTENT_HASH_PRESENT",
+        "description": "Content hash present.",
+        "pass": true,
+        "observed": "sha256:063a91ba0a5c28ab4bae7..."
+      },
+      {
+        "check_id": "L5.NONCE_PRESENT",
+        "description": "Nonce present.",
+        "pass": true,
+        "observed": "b3e6f4229bb42a16a11b696b3f30..."
+      },
+      {
+        "check_id": "L5.SIGNATURE_PRESENT",
+        "description": "Signature present.",
+        "pass": true,
+        "observed": "sha256:b45c77ed588356dcc8654..."
+      }
+    ],
+    "evidence": {
+      "signing_strategy": "GNCE_v0.4_pseudo_signature",
+      "content_hash_sha256": "sha256:063a91ba0a5c28ab4bae79488f2273fc1b7654f8ab33bfb87cb19e635f738f99"
+    },
+    "decision_gate": {
+      "allow_downstream": true,
+      "block_reason": null,
+      "gate_reason": "ALLOW: CET signed and integrity-bound for verdict=ALLOW."
+    }
+  },
+  "L6_behavioral_drift_and_monitoring": {
+    "drift_status": "NO_DRIFT",
+    "drift_outcome": "NO_DRIFT",
+    "drift_score": 0.0,
+    "reason": "Behavior within expected baseline (drift score: 0.00).",
+    "human_rationale": null,
+    "signals": {
+      "payload_fingerprint": "654bb76b5119800644b12472f2328ffca0875c04d887a9290afd7e32e00f5f3e",
+      "policies_fingerprint": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "l1_fingerprint": "a3e829284bb5bbcef7c658f742ead21aa4ccea6e1cc2ee63aaac0ddcdadfeccf"
+    },
+    "layer": "L6",
+    "title": "Behavioral Drift & Constitutional Monitoring",
+    "validated": true,
+    "issues": [],
+    "severity": "LOW",
+    "constitutional": {
+      "clause": "GNCE Sec. 6.1 — Behavioral drift monitoring must detect unsafe patterns.",
+      "explainability": {
+        "headline": "NO DRIFT — monitoring reports stable behavior."
+      }
+    },
+    "checks": [
+      {
+        "check_id": "L6.DRIFT_ENGINE_EMITTED",
+        "description": "Drift outcome emitted.",
+        "pass": true,
+        "observed": "NO_DRIFT/0.0"
+      },
+      {
+        "check_id": "L6.DRIFT_ALERT_CHECK",
+        "description": "No drift alert (or escalation required).",
+        "pass": true,
+        "observed": "NO_DRIFT"
+      }
+    ],
+    "evidence": {
+      "drift_outcome": "NO_DRIFT",
+      "drift_score": 0.0,
+      "notes": null
+    },
+    "decision_gate": {
+      "allow_downstream": true,
+      "block_reason": null
+    }
+  },
+  "L7_veto_and_execution_feedback": {
+    "layer": "L7",
+    "title": "Veto Path & Sovereign Execution Feedback",
+    "validated": true,
+    "execution_authorized": true,
+    "veto_triggered": false,
+    "veto_path_triggered": false,
+    "veto_category": "NONE",
+    "escalation_required": "NONE",
+    "evaluation_mode": "STRICT",
+    "veto_layer": null,
+    "origin_layer": null,
+    "trigger_layer": null,
+    "clause": null,
+    "veto_basis": [],
+    "constitutional_citation": "A system cannot execute an ALLOW verdict when HIGH/CRITICAL obligations are violated.",
+    "corrective_signal": null,
+    "severity": "LOW",
+    "issues": [],
+    "decision_gate": {
+      "allow_downstream": true,
+      "block_reason": null
+    },
+    "veto_artifact_hash_sha256": "sha256:75cbfc8e2bf584a4d6ab1e5d152116fcae42f80c7263a9e5e0c567414ac552a2"
+  },
+  "stewardship_context": {
+    "organizational_steward": {
+      "steward_type": "ORGANIZATIONAL_STEWARD",
+      "display_name": "Deployment-Level Policy Team (L4 Stewardship)",
+      "governance_domain": "GNCE Policy Lineage & Constitutional Authority (L4)"
+    },
+    "human_steward": {
+      "steward_type": "HUMAN_REVIEW_POOL",
+      "display_name": "Unassigned (Review Pool)"
+    },
+    "governance_tier": {
+      "tier": "TIER_2_OPERATIONAL",
+      "description": "Operational governance tier for day-to-day GNCE decisions."
+    },
+    "sovereign_engine": {
+      "engine_name": "GNCE Sovereign Constitutional Engine",
+      "version": "0.7.2-RC"
+    }
+  },
+  "governance_context": {
+    "industry_id": "SOCIAL_MEDIA",
+    "profile_id": "VLOP_SOCIAL_META",
+    "industry_display_name": null,
+    "profile_display_name": null,
+    "scope_enabled_regimes": [
+      "DMA",
+      "DSA",
+      "EU_AI_ACT",
+      "GDPR",
+      "ISO_42001",
+      "NIST_AI_RMF"
+    ],
+    "decision_bundle_id": "bundle-8152bf1a4984",
+    "chain_of_custody": {
+      "request_received_utc": "2026-01-04T20:38:10+00:00",
+      "kernel_evaluated_by": "GNCE Sovereign Constitutional Engine",
+      "kernel_version": "0.7.2-RC",
+      "execution_authorized": true,
+      "veto_category": "NONE",
+      "timeline_events": [
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "REQUEST_RECEIVED",
+          "detail": "Evaluation ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96 received by GNCE sovereign kernel"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L0_COMPLETED",
+          "detail": "validated=True issues_count=0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "ROUTED_TO_PROFILE",
+          "detail": "industry_id=SOCIAL_MEDIA profile_id=VLOP_SOCIAL_META enabled_regimes=6"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L2_SNAPSHOT_HASHED",
+          "detail": "input_hash=sha256:a1cd5ccd870..."
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L3_L4_COMPLETED",
+          "detail": "policies=0 blocking_failures=0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L1_VERDICT_COMPUTED",
+          "detail": "decision=ALLOW severity=LOW"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L5_CET_SIGNATURE_ATTACHED",
+          "detail": "content_hash=sha256:063a91ba0a5..."
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L6_DRIFT_EVALUATED",
+          "detail": "outcome=NO_DRIFT score=0.0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L7_VETO_EVALUATED",
+          "detail": "authorized=True veto_category=NONE evaluation_mode=STRICT"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "QUALITY_GATES_FAILED",
+          "detail": "failures=2"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "EVALUATION_COMPLETED",
+          "detail": "duration=11.29ms decision=ALLOW evaluation_id=ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+        }
+      ],
+      "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96",
+      "decision_bundle_id": "bundle-8152bf1a4984"
+    },
+    "verdict_snapshot": {
+      "decision_outcome": "ALLOW",
+      "severity": "LOW",
+      "timestamp_utc": "2026-01-04T20:38:10+00:00",
+      "engine_version": "0.7.2-RC",
+      "human_oversight_required": false,
+      "safe_state_triggered": false,
+      "drift_outcome": "NO_DRIFT",
+      "drift_score": 0.0,
+      "evaluation_mode": "STRICT"
+    }
+  },
+  "sars_v2": {
+    "article_compliance": [],
+    "severity_weighted_score": null,
+    "heatmap_vector": {},
+    "explainability": {
+      "scoring_method": "",
+      "cross_article_links": []
+    }
+  },
+  "evidence_chain": [],
+  "constitutional_path": [],
+  "kernel_execution_timeline": [
+    {
+      "ts_utc": "2026-01-14T10:33:08+00:00",
+      "stage": "REQUEST_RECEIVED",
+      "detail": "Evaluation ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96 received by GNCE sovereign kernel"
+    },
+    {
+      "ts_utc": "2026-01-14T10:33:08+00:00",
+      "stage": "L0_COMPLETED",
+      "detail": "validated=True issues_count=0"
+    },
+    {
+      "ts_utc": "2026-01-14T10:33:08+00:00",
+      "stage": "ROUTED_TO_PROFILE",
+      "detail": "industry_id=SOCIAL_MEDIA profile_id=VLOP_SOCIAL_META enabled_regimes=6"
+    },
+    {
+      "ts_utc": "2026-01-14T10:33:08+00:00",
+      "stage": "L2_SNAPSHOT_HASHED",
+      "detail": "input_hash=sha256:a1cd5ccd870..."
+    },
+    {
+      "ts_utc": "2026-01-14T10:33:08+00:00",
+      "stage": "L3_L4_COMPLETED",
+      "detail": "policies=0 blocking_failures=0"
+    },
+    {
+      "ts_utc": "2026-01-14T10:33:08+00:00",
+      "stage": "L1_VERDICT_COMPUTED",
+      "detail": "decision=ALLOW severity=LOW"
+    },
+    {
+      "ts_utc": "2026-01-14T10:33:08+00:00",
+      "stage": "L5_CET_SIGNATURE_ATTACHED",
+      "detail": "content_hash=sha256:063a91ba0a5..."
+    },
+    {
+      "ts_utc": "2026-01-14T10:33:08+00:00",
+      "stage": "L6_DRIFT_EVALUATED",
+      "detail": "outcome=NO_DRIFT score=0.0"
+    },
+    {
+      "ts_utc": "2026-01-14T10:33:08+00:00",
+      "stage": "L7_VETO_EVALUATED",
+      "detail": "authorized=True veto_category=NONE evaluation_mode=STRICT"
+    }
+  ],
+  "dsa_cet_extended": {
+    "articles_evaluated": [],
+    "trusted_flagger_chain": [],
+    "regulatory_access_chain": [],
+    "explainability": {
+      "why_article_applied": "",
+      "evidence_links": []
+    }
+  },
+  "evaluation_context_id": "33de955d-a1fb-48ce-8abd-4e26c9959464",
+  "evaluation_mode": "STRICT",
+  "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96",
+  "rule_coverage_analysis": {
+    "total_policies": 0,
+    "by_status": {},
+    "by_severity": {},
+    "by_regime": {}
+  },
+  "decision_bundle_id": "bundle-8152bf1a4984",
+  "timestamp_utc": "2026-01-04T20:38:10+00:00",
+  "domains_triggered": [],
+  "quality_gates": {
+    "passed": false,
+    "failures": [
+      "Only 0 policies triggered, minimum is 3",
+      "Missing required field: adra_hash"
+    ],
+    "checked_at": "2026-01-14T10:33:08+00:00"
+  },
+  "adra_hash": "sha256:158929f5e97442e2022e0bcc66ccb6d0b41b3cb0353b1016bb7b3bceac02a85d",
+  "regime_adrAs": [
+    {
+      "gnce_contract_version": "1.1",
+      "finalized": false,
+      "adra_version": "0.5",
+      "adra_id": "adra-a5fb963345084188",
+      "GNCE_version": "0.7.2-RC",
+      "created_at_utc": "2026-01-14T10:33:08.394809+00:00",
+      "drift_outcome": "NO_DRIFT",
+      "drift_score": 0.0,
+      "L0_pre_execution_validation": {
+        "layer": "L0",
+        "title": "Pre-Execution Constitutional Validation",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "constitutional": {
+          "clause": "GNCE Sec. 0.1 — Inputs must be structurally valid JSON objects.",
+          "justification": "L0 verifies structural integrity before downstream layers execute.",
+          "explainability": {
+            "why_required": "GNCE must guarantee deterministic inputs.",
+            "impact": "If L0 fails, downstream computation must be blocked."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L0.JSON_OBJECT",
+            "description": "Payload is a JSON object (dict).",
+            "pass": true,
+            "observed": "dict"
+          },
+          {
+            "check_id": "L0.KEYS_CAPTURED",
+            "description": "Payload keys captured for evidence.",
+            "pass": true,
+            "observed": "keys=14"
+          }
+        ],
+        "evidence": {
+          "input_shape": "dict",
+          "keys_present": [
+            "action",
+            "content",
+            "user_id",
+            "timestamp_utc",
+            "risk_indicators",
+            "meta",
+            "industry_id",
+            "profile_id",
+            "platform_behavior",
+            "dsa",
+            "dma_profile",
+            "audit",
+            "ai_profile",
+            "governance"
+          ],
+          "issues_count": 0,
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        }
+      },
+      "L1_the_verdict_and_constitutional_outcome": {
+        "layer": "L1",
+        "title": "The Verdict & Constitutional Outcome",
+        "decision_outcome": "ALLOW",
+        "severity": "LOW",
+        "human_oversight_required": false,
+        "safe_state_triggered": false,
+        "timestamp_utc": "2026-01-04T20:38:10+00:00",
+        "engine_version": "0.7.2-RC",
+        "rationale": "Regime-local verdict computed from regime-scoped policy lineage.",
+        "summary": {
+          "policies_considered": 0,
+          "violated": 0,
+          "satisfied": 0,
+          "not_applicable": 0,
+          "unknown": 0,
+          "blocking_violations": 0,
+          "highest_severity_any": "LOW",
+          "highest_severity_violation": "LOW"
+        },
+        "human_readable_outcome": "ALLOW — Constitutional outcome at LOW severity.",
+        "because": [
+          "No violations detected; evaluated obligations are satisfied or not applicable."
+        ],
+        "regulator_summary": "Outcome: ALLOW. Severity: LOW. Blocking violations: 0. Total violations: 0. Policies considered: 0.",
+        "recommended_actions": [
+          "Proceed with execution.",
+          "Persist ADRA to SARS session ledger and export (if enabled).",
+          "Monitor drift signals (L6) over the next N runs; escalate if DRIFT_ALERT appears.",
+          "Sample this decision for periodic QA if the incident type is sensitive."
+        ],
+        "constitutional": {
+          "clause": "GNCE Sec. 1.0 — Verdict must be derived deterministically from binding obligations.",
+          "justification": "L1 adjudicates L4 policy lineage into a sovereign decision.",
+          "explainability": {
+            "headline": "ALLOW — no blocking constitutional violations detected.",
+            "impact": "Downstream layers bind to this verdict for integrity, drift and veto enforcement."
+          }
+        },
+        "evidence": {
+          "engine_version": "0.7.2-RC",
+          "policy_counts": {
+            "total": 0,
+            "violated": 0,
+            "satisfied": 0,
+            "not_applicable": 0
+          },
+          "evaluation_mode": "STRICT"
+        },
+        "decision_gate": {
+          "decision_outcome": "ALLOW",
+          "severity": "LOW",
+          "human_oversight_required": false,
+          "safe_state_triggered": false
+        }
+      },
+      "L2_input_snapshot_and_dra": {
+        "layer": "L2",
+        "title": "Input Snapshot & Deterministic Record Anchor (DRA)",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "input_snapshot": {},
+        "input_hash_sha256": "sha256:a1cd5ccd8706d47498a36a50aae93b9285eefd8a98fcb93547af7b35c72d7095",
+        "provenance": {
+          "received_at_utc": "2026-01-04T20:38:10+00:00",
+          "format_valid": true,
+          "fields_present": [
+            "action",
+            "content",
+            "user_id",
+            "timestamp_utc",
+            "risk_indicators",
+            "meta",
+            "industry_id",
+            "profile_id",
+            "platform_behavior",
+            "dsa",
+            "dma_profile",
+            "audit",
+            "ai_profile",
+            "governance"
+          ],
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+        },
+        "constitutional": {
+          "clause": "GNCE Sec. 2.2 — Every ADRA must bind to a deterministic input hash.",
+          "explainability": {
+            "headline": "INPUT BOUND — payload is cryptographically anchored to this ADRA.",
+            "impact": "The hash is carried into L5 CET integrity tokens."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L2.INPUT_HASH_PRESENT",
+            "description": "Input hash computed.",
+            "pass": true,
+            "observed": "sha256:a1cd5ccd8706d47498a36a50a..."
+          },
+          {
+            "check_id": "L2.PROVENANCE_CAPTURED",
+            "description": "Provenance captured.",
+            "pass": true,
+            "observed": "2026-01-04T20:38:10+00:00"
+          }
+        ],
+        "evidence": {
+          "input_shape": "dict",
+          "keys_present": [
+            "action",
+            "content",
+            "user_id",
+            "timestamp_utc",
+            "risk_indicators",
+            "meta",
+            "industry_id",
+            "profile_id",
+            "platform_behavior",
+            "dsa",
+            "dma_profile",
+            "audit",
+            "ai_profile",
+            "governance"
+          ],
+          "received_at_utc": "2026-01-04T20:38:10+00:00",
+          "input_hash": "sha256:a1cd5ccd8706d47498a36a50aae93b9285eefd8a98fcb93547af7b35c72d7095"
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        }
+      },
+      "L3_rule_level_trace": {
+        "layer": "L3",
+        "title": "Deterministic Rule Engine (DRE)",
+        "validated": false,
+        "issues": [
+          "L3 evaluation error: name 're' is not defined"
+        ],
+        "severity": "HIGH",
+        "summary": {
+          "error": "name 're' is not defined",
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+        },
+        "causal_trace": [],
+        "constitutional": {
+          "clause": "GNCE Sec. 3.4 — Rule-level explainability must be available for regulators."
+        },
+        "checks": [],
+        "evidence": {
+          "error": "name 're' is not defined",
+          "traceback": "HIDDEN"
+        },
+        "decision_gate": {
+          "allow_downstream": false,
+          "block_reason": "L3 error: name 're' is not defined"
+        },
+        "enabled_regimes": [
+          "DMA"
+        ]
+      },
+      "L4_policy_lineage_and_constitution": {
+        "layer": "L4",
+        "title": "Policy Lineage & Constitutional Authority",
+        "validated": false,
+        "issues": [
+          "L4 evaluation error: name 're' is not defined"
+        ],
+        "severity": "HIGH",
+        "policies_triggered": [],
+        "policy_lineage": [],
+        "constitutional": {
+          "clause": "GNCE Sec. 4.0 — Policy lineage must deterministically link rules to obligations."
+        },
+        "checks": [],
+        "evidence": {
+          "error": "name 're' is not defined"
+        },
+        "decision_gate": {
+          "allow_downstream": false,
+          "block_reason": "L4 error: name 're' is not defined"
+        }
+      },
+      "L5_integrity_and_tokenization": {
+        "layer": "L5",
+        "title": "Integrity & Cryptographic Execution Token (CET)",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "content_hash_sha256": "sha256:063a91ba0a5c28ab4bae79488f2273fc1b7654f8ab33bfb87cb19e635f738f99",
+        "nonce": "b3e6f4229bb42a16a11b696b3f3076028b4b66383ac5c093a24680f92e4a5bb6",
+        "pseudo_signature_sha256": "sha256:b45c77ed588356dcc8654e227366e2b5d322f5a9bdefebecfc9fb62d28b92955",
+        "signing_strategy": "GNCE_v0.4_pseudo_signature",
+        "constitutional": {
+          "clause": "GNCE Sec. 5.1 — Constitutional decisions must be integrity-bound via CET.",
+          "explainability": {
+            "headline": "CET SIGNED — constitutional substrate is integrity-bound (non-repudiable)."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L5.CONTENT_HASH_PRESENT",
+            "description": "Content hash present.",
+            "pass": true,
+            "observed": "sha256:063a91ba0a5c28ab4bae7..."
+          },
+          {
+            "check_id": "L5.NONCE_PRESENT",
+            "description": "Nonce present.",
+            "pass": true,
+            "observed": "b3e6f4229bb42a16a11b696b3f30..."
+          },
+          {
+            "check_id": "L5.SIGNATURE_PRESENT",
+            "description": "Signature present.",
+            "pass": true,
+            "observed": "sha256:b45c77ed588356dcc8654..."
+          }
+        ],
+        "evidence": {
+          "signing_strategy": "GNCE_v0.4_pseudo_signature",
+          "content_hash_sha256": "sha256:063a91ba0a5c28ab4bae79488f2273fc1b7654f8ab33bfb87cb19e635f738f99"
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null,
+          "gate_reason": "ALLOW: CET signed and integrity-bound for verdict=ALLOW."
+        }
+      },
+      "L6_behavioral_drift_and_monitoring": {
+        "drift_status": "NO_DRIFT",
+        "drift_outcome": "NO_DRIFT",
+        "drift_score": 0.0,
+        "reason": "Behavior within expected baseline (drift score: 0.00).",
+        "human_rationale": null,
+        "signals": {
+          "payload_fingerprint": "654bb76b5119800644b12472f2328ffca0875c04d887a9290afd7e32e00f5f3e",
+          "policies_fingerprint": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "l1_fingerprint": "a3e829284bb5bbcef7c658f742ead21aa4ccea6e1cc2ee63aaac0ddcdadfeccf"
+        },
+        "layer": "L6",
+        "title": "Behavioral Drift & Constitutional Monitoring",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "constitutional": {
+          "clause": "GNCE Sec. 6.1 — Behavioral drift monitoring must detect unsafe patterns.",
+          "explainability": {
+            "headline": "NO DRIFT — monitoring reports stable behavior."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L6.DRIFT_ENGINE_EMITTED",
+            "description": "Drift outcome emitted.",
+            "pass": true,
+            "observed": "NO_DRIFT/0.0"
+          },
+          {
+            "check_id": "L6.DRIFT_ALERT_CHECK",
+            "description": "No drift alert (or escalation required).",
+            "pass": true,
+            "observed": "NO_DRIFT"
+          }
+        ],
+        "evidence": {
+          "drift_outcome": "NO_DRIFT",
+          "drift_score": 0.0,
+          "notes": null
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        }
+      },
+      "L7_veto_and_execution_feedback": {
+        "layer": "L7",
+        "title": "Veto Path & Sovereign Execution Feedback",
+        "validated": true,
+        "execution_authorized": true,
+        "veto_triggered": false,
+        "veto_path_triggered": false,
+        "veto_category": "NONE",
+        "escalation_required": "NONE",
+        "evaluation_mode": "STRICT",
+        "veto_layer": null,
+        "origin_layer": null,
+        "trigger_layer": null,
+        "clause": null,
+        "veto_basis": [],
+        "constitutional_citation": "A system cannot execute an ALLOW verdict when HIGH/CRITICAL obligations are violated.",
+        "corrective_signal": null,
+        "severity": "LOW",
+        "issues": [],
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        },
+        "veto_artifact_hash_sha256": "sha256:75cbfc8e2bf584a4d6ab1e5d152116fcae42f80c7263a9e5e0c567414ac552a2"
+      },
+      "stewardship_context": {
+        "organizational_steward": {
+          "steward_type": "ORGANIZATIONAL_STEWARD",
+          "display_name": "Deployment-Level Policy Team (L4 Stewardship)",
+          "governance_domain": "GNCE Policy Lineage & Constitutional Authority (L4)"
+        },
+        "human_steward": {
+          "steward_type": "HUMAN_REVIEW_POOL",
+          "display_name": "Unassigned (Review Pool)"
+        },
+        "governance_tier": {
+          "tier": "TIER_2_OPERATIONAL",
+          "description": "Operational governance tier for day-to-day GNCE decisions."
+        },
+        "sovereign_engine": {
+          "engine_name": "GNCE Sovereign Constitutional Engine",
+          "version": "0.7.2-RC"
+        }
+      },
+      "governance_context": {
+        "industry_id": "SOCIAL_MEDIA",
+        "profile_id": "VLOP_SOCIAL_META",
+        "industry_display_name": null,
+        "profile_display_name": null,
+        "scope_enabled_regimes": [
+          "DMA",
+          "DSA",
+          "EU_AI_ACT",
+          "GDPR",
+          "ISO_42001",
+          "NIST_AI_RMF"
+        ],
+        "decision_bundle_id": "bundle-8152bf1a4984",
+        "chain_of_custody": {
+          "request_received_utc": "2026-01-04T20:38:10+00:00",
+          "kernel_evaluated_by": "GNCE Sovereign Constitutional Engine",
+          "kernel_version": "0.7.2-RC",
+          "execution_authorized": true,
+          "veto_category": "NONE",
+          "timeline_events": [
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "REQUEST_RECEIVED",
+              "detail": "Evaluation ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96 received by GNCE sovereign kernel"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L0_COMPLETED",
+              "detail": "validated=True issues_count=0"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "ROUTED_TO_PROFILE",
+              "detail": "industry_id=SOCIAL_MEDIA profile_id=VLOP_SOCIAL_META enabled_regimes=6"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L2_SNAPSHOT_HASHED",
+              "detail": "input_hash=sha256:a1cd5ccd870..."
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L3_L4_COMPLETED",
+              "detail": "policies=0 blocking_failures=0"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L1_VERDICT_COMPUTED",
+              "detail": "decision=ALLOW severity=LOW"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L5_CET_SIGNATURE_ATTACHED",
+              "detail": "content_hash=sha256:063a91ba0a5..."
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L6_DRIFT_EVALUATED",
+              "detail": "outcome=NO_DRIFT score=0.0"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L7_VETO_EVALUATED",
+              "detail": "authorized=True veto_category=NONE evaluation_mode=STRICT"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "QUALITY_GATES_FAILED",
+              "detail": "failures=2"
+            }
+          ],
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96",
+          "decision_bundle_id": "bundle-8152bf1a4984"
+        },
+        "verdict_snapshot": {
+          "decision_outcome": "ALLOW",
+          "severity": "LOW",
+          "timestamp_utc": "2026-01-04T20:38:10+00:00",
+          "engine_version": "0.7.2-RC",
+          "human_oversight_required": false,
+          "safe_state_triggered": false,
+          "drift_outcome": "NO_DRIFT",
+          "drift_score": 0.0,
+          "evaluation_mode": "STRICT"
+        }
+      },
+      "sars_v2": {
+        "article_compliance": [],
+        "severity_weighted_score": null,
+        "heatmap_vector": {},
+        "explainability": {
+          "scoring_method": "",
+          "cross_article_links": []
+        }
+      },
+      "evidence_chain": [],
+      "constitutional_path": [],
+      "kernel_execution_timeline": [
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "REQUEST_RECEIVED",
+          "detail": "Evaluation ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96 received by GNCE sovereign kernel"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L0_COMPLETED",
+          "detail": "validated=True issues_count=0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "ROUTED_TO_PROFILE",
+          "detail": "industry_id=SOCIAL_MEDIA profile_id=VLOP_SOCIAL_META enabled_regimes=6"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L2_SNAPSHOT_HASHED",
+          "detail": "input_hash=sha256:a1cd5ccd870..."
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L3_L4_COMPLETED",
+          "detail": "policies=0 blocking_failures=0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L1_VERDICT_COMPUTED",
+          "detail": "decision=ALLOW severity=LOW"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L5_CET_SIGNATURE_ATTACHED",
+          "detail": "content_hash=sha256:063a91ba0a5..."
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L6_DRIFT_EVALUATED",
+          "detail": "outcome=NO_DRIFT score=0.0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L7_VETO_EVALUATED",
+          "detail": "authorized=True veto_category=NONE evaluation_mode=STRICT"
+        }
+      ],
+      "dsa_cet_extended": {
+        "articles_evaluated": [],
+        "trusted_flagger_chain": [],
+        "regulatory_access_chain": [],
+        "explainability": {
+          "why_article_applied": "",
+          "evidence_links": []
+        }
+      },
+      "evaluation_context_id": "33de955d-a1fb-48ce-8abd-4e26c9959464",
+      "evaluation_mode": "STRICT",
+      "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96",
+      "rule_coverage_analysis": {
+        "total_policies": 0,
+        "by_status": {},
+        "by_severity": {},
+        "by_regime": {}
+      },
+      "decision_bundle_id": "bundle-8152bf1a4984",
+      "timestamp_utc": "2026-01-04T20:38:10+00:00",
+      "domains_triggered": [],
+      "quality_gates": {
+        "passed": false,
+        "failures": [
+          "Only 0 policies triggered, minimum is 3",
+          "Missing required field: adra_hash"
+        ],
+        "checked_at": "2026-01-14T10:33:08+00:00"
+      },
+      "adra_hash": "sha256:0163ac71c8acea2b2885b6524965ea0ae392a0a4758686f775fe22765d8b66f9"
+    },
+    {
+      "gnce_contract_version": "1.1",
+      "finalized": false,
+      "adra_version": "0.5",
+      "adra_id": "adra-5114c003d30c4054",
+      "GNCE_version": "0.7.2-RC",
+      "created_at_utc": "2026-01-14T10:33:08.394809+00:00",
+      "drift_outcome": "NO_DRIFT",
+      "drift_score": 0.0,
+      "L0_pre_execution_validation": {
+        "layer": "L0",
+        "title": "Pre-Execution Constitutional Validation",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "constitutional": {
+          "clause": "GNCE Sec. 0.1 — Inputs must be structurally valid JSON objects.",
+          "justification": "L0 verifies structural integrity before downstream layers execute.",
+          "explainability": {
+            "why_required": "GNCE must guarantee deterministic inputs.",
+            "impact": "If L0 fails, downstream computation must be blocked."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L0.JSON_OBJECT",
+            "description": "Payload is a JSON object (dict).",
+            "pass": true,
+            "observed": "dict"
+          },
+          {
+            "check_id": "L0.KEYS_CAPTURED",
+            "description": "Payload keys captured for evidence.",
+            "pass": true,
+            "observed": "keys=14"
+          }
+        ],
+        "evidence": {
+          "input_shape": "dict",
+          "keys_present": [
+            "action",
+            "content",
+            "user_id",
+            "timestamp_utc",
+            "risk_indicators",
+            "meta",
+            "industry_id",
+            "profile_id",
+            "platform_behavior",
+            "dsa",
+            "dma_profile",
+            "audit",
+            "ai_profile",
+            "governance"
+          ],
+          "issues_count": 0,
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        }
+      },
+      "L1_the_verdict_and_constitutional_outcome": {
+        "layer": "L1",
+        "title": "The Verdict & Constitutional Outcome",
+        "decision_outcome": "ALLOW",
+        "severity": "LOW",
+        "human_oversight_required": false,
+        "safe_state_triggered": false,
+        "timestamp_utc": "2026-01-04T20:38:10+00:00",
+        "engine_version": "0.7.2-RC",
+        "rationale": "Regime-local verdict computed from regime-scoped policy lineage.",
+        "summary": {
+          "policies_considered": 0,
+          "violated": 0,
+          "satisfied": 0,
+          "not_applicable": 0,
+          "unknown": 0,
+          "blocking_violations": 0,
+          "highest_severity_any": "LOW",
+          "highest_severity_violation": "LOW"
+        },
+        "human_readable_outcome": "ALLOW — Constitutional outcome at LOW severity.",
+        "because": [
+          "No violations detected; evaluated obligations are satisfied or not applicable."
+        ],
+        "regulator_summary": "Outcome: ALLOW. Severity: LOW. Blocking violations: 0. Total violations: 0. Policies considered: 0.",
+        "recommended_actions": [
+          "Proceed with execution.",
+          "Persist ADRA to SARS session ledger and export (if enabled).",
+          "Monitor drift signals (L6) over the next N runs; escalate if DRIFT_ALERT appears.",
+          "Sample this decision for periodic QA if the incident type is sensitive."
+        ],
+        "constitutional": {
+          "clause": "GNCE Sec. 1.0 — Verdict must be derived deterministically from binding obligations.",
+          "justification": "L1 adjudicates L4 policy lineage into a sovereign decision.",
+          "explainability": {
+            "headline": "ALLOW — no blocking constitutional violations detected.",
+            "impact": "Downstream layers bind to this verdict for integrity, drift and veto enforcement."
+          }
+        },
+        "evidence": {
+          "engine_version": "0.7.2-RC",
+          "policy_counts": {
+            "total": 0,
+            "violated": 0,
+            "satisfied": 0,
+            "not_applicable": 0
+          },
+          "evaluation_mode": "STRICT"
+        },
+        "decision_gate": {
+          "decision_outcome": "ALLOW",
+          "severity": "LOW",
+          "human_oversight_required": false,
+          "safe_state_triggered": false
+        }
+      },
+      "L2_input_snapshot_and_dra": {
+        "layer": "L2",
+        "title": "Input Snapshot & Deterministic Record Anchor (DRA)",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "input_snapshot": {},
+        "input_hash_sha256": "sha256:a1cd5ccd8706d47498a36a50aae93b9285eefd8a98fcb93547af7b35c72d7095",
+        "provenance": {
+          "received_at_utc": "2026-01-04T20:38:10+00:00",
+          "format_valid": true,
+          "fields_present": [
+            "action",
+            "content",
+            "user_id",
+            "timestamp_utc",
+            "risk_indicators",
+            "meta",
+            "industry_id",
+            "profile_id",
+            "platform_behavior",
+            "dsa",
+            "dma_profile",
+            "audit",
+            "ai_profile",
+            "governance"
+          ],
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+        },
+        "constitutional": {
+          "clause": "GNCE Sec. 2.2 — Every ADRA must bind to a deterministic input hash.",
+          "explainability": {
+            "headline": "INPUT BOUND — payload is cryptographically anchored to this ADRA.",
+            "impact": "The hash is carried into L5 CET integrity tokens."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L2.INPUT_HASH_PRESENT",
+            "description": "Input hash computed.",
+            "pass": true,
+            "observed": "sha256:a1cd5ccd8706d47498a36a50a..."
+          },
+          {
+            "check_id": "L2.PROVENANCE_CAPTURED",
+            "description": "Provenance captured.",
+            "pass": true,
+            "observed": "2026-01-04T20:38:10+00:00"
+          }
+        ],
+        "evidence": {
+          "input_shape": "dict",
+          "keys_present": [
+            "action",
+            "content",
+            "user_id",
+            "timestamp_utc",
+            "risk_indicators",
+            "meta",
+            "industry_id",
+            "profile_id",
+            "platform_behavior",
+            "dsa",
+            "dma_profile",
+            "audit",
+            "ai_profile",
+            "governance"
+          ],
+          "received_at_utc": "2026-01-04T20:38:10+00:00",
+          "input_hash": "sha256:a1cd5ccd8706d47498a36a50aae93b9285eefd8a98fcb93547af7b35c72d7095"
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        }
+      },
+      "L3_rule_level_trace": {
+        "layer": "L3",
+        "title": "Deterministic Rule Engine (DRE)",
+        "validated": false,
+        "issues": [
+          "L3 evaluation error: name 're' is not defined"
+        ],
+        "severity": "HIGH",
+        "summary": {
+          "error": "name 're' is not defined",
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+        },
+        "causal_trace": [],
+        "constitutional": {
+          "clause": "GNCE Sec. 3.4 — Rule-level explainability must be available for regulators."
+        },
+        "checks": [],
+        "evidence": {
+          "error": "name 're' is not defined",
+          "traceback": "HIDDEN"
+        },
+        "decision_gate": {
+          "allow_downstream": false,
+          "block_reason": "L3 error: name 're' is not defined"
+        },
+        "enabled_regimes": [
+          "DSA"
+        ]
+      },
+      "L4_policy_lineage_and_constitution": {
+        "layer": "L4",
+        "title": "Policy Lineage & Constitutional Authority",
+        "validated": false,
+        "issues": [
+          "L4 evaluation error: name 're' is not defined"
+        ],
+        "severity": "HIGH",
+        "policies_triggered": [],
+        "policy_lineage": [],
+        "constitutional": {
+          "clause": "GNCE Sec. 4.0 — Policy lineage must deterministically link rules to obligations."
+        },
+        "checks": [],
+        "evidence": {
+          "error": "name 're' is not defined"
+        },
+        "decision_gate": {
+          "allow_downstream": false,
+          "block_reason": "L4 error: name 're' is not defined"
+        }
+      },
+      "L5_integrity_and_tokenization": {
+        "layer": "L5",
+        "title": "Integrity & Cryptographic Execution Token (CET)",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "content_hash_sha256": "sha256:063a91ba0a5c28ab4bae79488f2273fc1b7654f8ab33bfb87cb19e635f738f99",
+        "nonce": "b3e6f4229bb42a16a11b696b3f3076028b4b66383ac5c093a24680f92e4a5bb6",
+        "pseudo_signature_sha256": "sha256:b45c77ed588356dcc8654e227366e2b5d322f5a9bdefebecfc9fb62d28b92955",
+        "signing_strategy": "GNCE_v0.4_pseudo_signature",
+        "constitutional": {
+          "clause": "GNCE Sec. 5.1 — Constitutional decisions must be integrity-bound via CET.",
+          "explainability": {
+            "headline": "CET SIGNED — constitutional substrate is integrity-bound (non-repudiable)."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L5.CONTENT_HASH_PRESENT",
+            "description": "Content hash present.",
+            "pass": true,
+            "observed": "sha256:063a91ba0a5c28ab4bae7..."
+          },
+          {
+            "check_id": "L5.NONCE_PRESENT",
+            "description": "Nonce present.",
+            "pass": true,
+            "observed": "b3e6f4229bb42a16a11b696b3f30..."
+          },
+          {
+            "check_id": "L5.SIGNATURE_PRESENT",
+            "description": "Signature present.",
+            "pass": true,
+            "observed": "sha256:b45c77ed588356dcc8654..."
+          }
+        ],
+        "evidence": {
+          "signing_strategy": "GNCE_v0.4_pseudo_signature",
+          "content_hash_sha256": "sha256:063a91ba0a5c28ab4bae79488f2273fc1b7654f8ab33bfb87cb19e635f738f99"
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null,
+          "gate_reason": "ALLOW: CET signed and integrity-bound for verdict=ALLOW."
+        }
+      },
+      "L6_behavioral_drift_and_monitoring": {
+        "drift_status": "NO_DRIFT",
+        "drift_outcome": "NO_DRIFT",
+        "drift_score": 0.0,
+        "reason": "Behavior within expected baseline (drift score: 0.00).",
+        "human_rationale": null,
+        "signals": {
+          "payload_fingerprint": "654bb76b5119800644b12472f2328ffca0875c04d887a9290afd7e32e00f5f3e",
+          "policies_fingerprint": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "l1_fingerprint": "a3e829284bb5bbcef7c658f742ead21aa4ccea6e1cc2ee63aaac0ddcdadfeccf"
+        },
+        "layer": "L6",
+        "title": "Behavioral Drift & Constitutional Monitoring",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "constitutional": {
+          "clause": "GNCE Sec. 6.1 — Behavioral drift monitoring must detect unsafe patterns.",
+          "explainability": {
+            "headline": "NO DRIFT — monitoring reports stable behavior."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L6.DRIFT_ENGINE_EMITTED",
+            "description": "Drift outcome emitted.",
+            "pass": true,
+            "observed": "NO_DRIFT/0.0"
+          },
+          {
+            "check_id": "L6.DRIFT_ALERT_CHECK",
+            "description": "No drift alert (or escalation required).",
+            "pass": true,
+            "observed": "NO_DRIFT"
+          }
+        ],
+        "evidence": {
+          "drift_outcome": "NO_DRIFT",
+          "drift_score": 0.0,
+          "notes": null
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        }
+      },
+      "L7_veto_and_execution_feedback": {
+        "layer": "L7",
+        "title": "Veto Path & Sovereign Execution Feedback",
+        "validated": true,
+        "execution_authorized": true,
+        "veto_triggered": false,
+        "veto_path_triggered": false,
+        "veto_category": "NONE",
+        "escalation_required": "NONE",
+        "evaluation_mode": "STRICT",
+        "veto_layer": null,
+        "origin_layer": null,
+        "trigger_layer": null,
+        "clause": null,
+        "veto_basis": [],
+        "constitutional_citation": "A system cannot execute an ALLOW verdict when HIGH/CRITICAL obligations are violated.",
+        "corrective_signal": null,
+        "severity": "LOW",
+        "issues": [],
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        },
+        "veto_artifact_hash_sha256": "sha256:75cbfc8e2bf584a4d6ab1e5d152116fcae42f80c7263a9e5e0c567414ac552a2"
+      },
+      "stewardship_context": {
+        "organizational_steward": {
+          "steward_type": "ORGANIZATIONAL_STEWARD",
+          "display_name": "Deployment-Level Policy Team (L4 Stewardship)",
+          "governance_domain": "GNCE Policy Lineage & Constitutional Authority (L4)"
+        },
+        "human_steward": {
+          "steward_type": "HUMAN_REVIEW_POOL",
+          "display_name": "Unassigned (Review Pool)"
+        },
+        "governance_tier": {
+          "tier": "TIER_2_OPERATIONAL",
+          "description": "Operational governance tier for day-to-day GNCE decisions."
+        },
+        "sovereign_engine": {
+          "engine_name": "GNCE Sovereign Constitutional Engine",
+          "version": "0.7.2-RC"
+        }
+      },
+      "governance_context": {
+        "industry_id": "SOCIAL_MEDIA",
+        "profile_id": "VLOP_SOCIAL_META",
+        "industry_display_name": null,
+        "profile_display_name": null,
+        "scope_enabled_regimes": [
+          "DMA",
+          "DSA",
+          "EU_AI_ACT",
+          "GDPR",
+          "ISO_42001",
+          "NIST_AI_RMF"
+        ],
+        "decision_bundle_id": "bundle-8152bf1a4984",
+        "chain_of_custody": {
+          "request_received_utc": "2026-01-04T20:38:10+00:00",
+          "kernel_evaluated_by": "GNCE Sovereign Constitutional Engine",
+          "kernel_version": "0.7.2-RC",
+          "execution_authorized": true,
+          "veto_category": "NONE",
+          "timeline_events": [
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "REQUEST_RECEIVED",
+              "detail": "Evaluation ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96 received by GNCE sovereign kernel"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L0_COMPLETED",
+              "detail": "validated=True issues_count=0"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "ROUTED_TO_PROFILE",
+              "detail": "industry_id=SOCIAL_MEDIA profile_id=VLOP_SOCIAL_META enabled_regimes=6"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L2_SNAPSHOT_HASHED",
+              "detail": "input_hash=sha256:a1cd5ccd870..."
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L3_L4_COMPLETED",
+              "detail": "policies=0 blocking_failures=0"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L1_VERDICT_COMPUTED",
+              "detail": "decision=ALLOW severity=LOW"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L5_CET_SIGNATURE_ATTACHED",
+              "detail": "content_hash=sha256:063a91ba0a5..."
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L6_DRIFT_EVALUATED",
+              "detail": "outcome=NO_DRIFT score=0.0"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L7_VETO_EVALUATED",
+              "detail": "authorized=True veto_category=NONE evaluation_mode=STRICT"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "QUALITY_GATES_FAILED",
+              "detail": "failures=2"
+            }
+          ],
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96",
+          "decision_bundle_id": "bundle-8152bf1a4984"
+        },
+        "verdict_snapshot": {
+          "decision_outcome": "ALLOW",
+          "severity": "LOW",
+          "timestamp_utc": "2026-01-04T20:38:10+00:00",
+          "engine_version": "0.7.2-RC",
+          "human_oversight_required": false,
+          "safe_state_triggered": false,
+          "drift_outcome": "NO_DRIFT",
+          "drift_score": 0.0,
+          "evaluation_mode": "STRICT"
+        }
+      },
+      "sars_v2": {
+        "article_compliance": [],
+        "severity_weighted_score": null,
+        "heatmap_vector": {},
+        "explainability": {
+          "scoring_method": "",
+          "cross_article_links": []
+        }
+      },
+      "evidence_chain": [],
+      "constitutional_path": [],
+      "kernel_execution_timeline": [
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "REQUEST_RECEIVED",
+          "detail": "Evaluation ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96 received by GNCE sovereign kernel"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L0_COMPLETED",
+          "detail": "validated=True issues_count=0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "ROUTED_TO_PROFILE",
+          "detail": "industry_id=SOCIAL_MEDIA profile_id=VLOP_SOCIAL_META enabled_regimes=6"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L2_SNAPSHOT_HASHED",
+          "detail": "input_hash=sha256:a1cd5ccd870..."
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L3_L4_COMPLETED",
+          "detail": "policies=0 blocking_failures=0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L1_VERDICT_COMPUTED",
+          "detail": "decision=ALLOW severity=LOW"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L5_CET_SIGNATURE_ATTACHED",
+          "detail": "content_hash=sha256:063a91ba0a5..."
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L6_DRIFT_EVALUATED",
+          "detail": "outcome=NO_DRIFT score=0.0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L7_VETO_EVALUATED",
+          "detail": "authorized=True veto_category=NONE evaluation_mode=STRICT"
+        }
+      ],
+      "dsa_cet_extended": {
+        "articles_evaluated": [],
+        "trusted_flagger_chain": [],
+        "regulatory_access_chain": [],
+        "explainability": {
+          "why_article_applied": "",
+          "evidence_links": []
+        }
+      },
+      "evaluation_context_id": "33de955d-a1fb-48ce-8abd-4e26c9959464",
+      "evaluation_mode": "STRICT",
+      "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96",
+      "rule_coverage_analysis": {
+        "total_policies": 0,
+        "by_status": {},
+        "by_severity": {},
+        "by_regime": {}
+      },
+      "decision_bundle_id": "bundle-8152bf1a4984",
+      "timestamp_utc": "2026-01-04T20:38:10+00:00",
+      "domains_triggered": [],
+      "quality_gates": {
+        "passed": false,
+        "failures": [
+          "Only 0 policies triggered, minimum is 3",
+          "Missing required field: adra_hash"
+        ],
+        "checked_at": "2026-01-14T10:33:08+00:00"
+      },
+      "adra_hash": "sha256:796fcfc8c6748428642f72cc3e763e9a10fc9e98f187f1b58ed383da85a45343"
+    },
+    {
+      "gnce_contract_version": "1.1",
+      "finalized": false,
+      "adra_version": "0.5",
+      "adra_id": "adra-ad7ca970609f4c28",
+      "GNCE_version": "0.7.2-RC",
+      "created_at_utc": "2026-01-14T10:33:08.394809+00:00",
+      "drift_outcome": "NO_DRIFT",
+      "drift_score": 0.0,
+      "L0_pre_execution_validation": {
+        "layer": "L0",
+        "title": "Pre-Execution Constitutional Validation",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "constitutional": {
+          "clause": "GNCE Sec. 0.1 — Inputs must be structurally valid JSON objects.",
+          "justification": "L0 verifies structural integrity before downstream layers execute.",
+          "explainability": {
+            "why_required": "GNCE must guarantee deterministic inputs.",
+            "impact": "If L0 fails, downstream computation must be blocked."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L0.JSON_OBJECT",
+            "description": "Payload is a JSON object (dict).",
+            "pass": true,
+            "observed": "dict"
+          },
+          {
+            "check_id": "L0.KEYS_CAPTURED",
+            "description": "Payload keys captured for evidence.",
+            "pass": true,
+            "observed": "keys=14"
+          }
+        ],
+        "evidence": {
+          "input_shape": "dict",
+          "keys_present": [
+            "action",
+            "content",
+            "user_id",
+            "timestamp_utc",
+            "risk_indicators",
+            "meta",
+            "industry_id",
+            "profile_id",
+            "platform_behavior",
+            "dsa",
+            "dma_profile",
+            "audit",
+            "ai_profile",
+            "governance"
+          ],
+          "issues_count": 0,
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        }
+      },
+      "L1_the_verdict_and_constitutional_outcome": {
+        "layer": "L1",
+        "title": "The Verdict & Constitutional Outcome",
+        "decision_outcome": "ALLOW",
+        "severity": "LOW",
+        "human_oversight_required": false,
+        "safe_state_triggered": false,
+        "timestamp_utc": "2026-01-04T20:38:10+00:00",
+        "engine_version": "0.7.2-RC",
+        "rationale": "Regime-local verdict computed from regime-scoped policy lineage.",
+        "summary": {
+          "policies_considered": 0,
+          "violated": 0,
+          "satisfied": 0,
+          "not_applicable": 0,
+          "unknown": 0,
+          "blocking_violations": 0,
+          "highest_severity_any": "LOW",
+          "highest_severity_violation": "LOW"
+        },
+        "human_readable_outcome": "ALLOW — Constitutional outcome at LOW severity.",
+        "because": [
+          "No violations detected; evaluated obligations are satisfied or not applicable."
+        ],
+        "regulator_summary": "Outcome: ALLOW. Severity: LOW. Blocking violations: 0. Total violations: 0. Policies considered: 0.",
+        "recommended_actions": [
+          "Proceed with execution.",
+          "Persist ADRA to SARS session ledger and export (if enabled).",
+          "Monitor drift signals (L6) over the next N runs; escalate if DRIFT_ALERT appears.",
+          "Sample this decision for periodic QA if the incident type is sensitive."
+        ],
+        "constitutional": {
+          "clause": "GNCE Sec. 1.0 — Verdict must be derived deterministically from binding obligations.",
+          "justification": "L1 adjudicates L4 policy lineage into a sovereign decision.",
+          "explainability": {
+            "headline": "ALLOW — no blocking constitutional violations detected.",
+            "impact": "Downstream layers bind to this verdict for integrity, drift and veto enforcement."
+          }
+        },
+        "evidence": {
+          "engine_version": "0.7.2-RC",
+          "policy_counts": {
+            "total": 0,
+            "violated": 0,
+            "satisfied": 0,
+            "not_applicable": 0
+          },
+          "evaluation_mode": "STRICT"
+        },
+        "decision_gate": {
+          "decision_outcome": "ALLOW",
+          "severity": "LOW",
+          "human_oversight_required": false,
+          "safe_state_triggered": false
+        }
+      },
+      "L2_input_snapshot_and_dra": {
+        "layer": "L2",
+        "title": "Input Snapshot & Deterministic Record Anchor (DRA)",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "input_snapshot": {},
+        "input_hash_sha256": "sha256:a1cd5ccd8706d47498a36a50aae93b9285eefd8a98fcb93547af7b35c72d7095",
+        "provenance": {
+          "received_at_utc": "2026-01-04T20:38:10+00:00",
+          "format_valid": true,
+          "fields_present": [
+            "action",
+            "content",
+            "user_id",
+            "timestamp_utc",
+            "risk_indicators",
+            "meta",
+            "industry_id",
+            "profile_id",
+            "platform_behavior",
+            "dsa",
+            "dma_profile",
+            "audit",
+            "ai_profile",
+            "governance"
+          ],
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+        },
+        "constitutional": {
+          "clause": "GNCE Sec. 2.2 — Every ADRA must bind to a deterministic input hash.",
+          "explainability": {
+            "headline": "INPUT BOUND — payload is cryptographically anchored to this ADRA.",
+            "impact": "The hash is carried into L5 CET integrity tokens."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L2.INPUT_HASH_PRESENT",
+            "description": "Input hash computed.",
+            "pass": true,
+            "observed": "sha256:a1cd5ccd8706d47498a36a50a..."
+          },
+          {
+            "check_id": "L2.PROVENANCE_CAPTURED",
+            "description": "Provenance captured.",
+            "pass": true,
+            "observed": "2026-01-04T20:38:10+00:00"
+          }
+        ],
+        "evidence": {
+          "input_shape": "dict",
+          "keys_present": [
+            "action",
+            "content",
+            "user_id",
+            "timestamp_utc",
+            "risk_indicators",
+            "meta",
+            "industry_id",
+            "profile_id",
+            "platform_behavior",
+            "dsa",
+            "dma_profile",
+            "audit",
+            "ai_profile",
+            "governance"
+          ],
+          "received_at_utc": "2026-01-04T20:38:10+00:00",
+          "input_hash": "sha256:a1cd5ccd8706d47498a36a50aae93b9285eefd8a98fcb93547af7b35c72d7095"
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        }
+      },
+      "L3_rule_level_trace": {
+        "layer": "L3",
+        "title": "Deterministic Rule Engine (DRE)",
+        "validated": false,
+        "issues": [
+          "L3 evaluation error: name 're' is not defined"
+        ],
+        "severity": "HIGH",
+        "summary": {
+          "error": "name 're' is not defined",
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+        },
+        "causal_trace": [],
+        "constitutional": {
+          "clause": "GNCE Sec. 3.4 — Rule-level explainability must be available for regulators."
+        },
+        "checks": [],
+        "evidence": {
+          "error": "name 're' is not defined",
+          "traceback": "HIDDEN"
+        },
+        "decision_gate": {
+          "allow_downstream": false,
+          "block_reason": "L3 error: name 're' is not defined"
+        },
+        "enabled_regimes": [
+          "EU_AI_ACT"
+        ]
+      },
+      "L4_policy_lineage_and_constitution": {
+        "layer": "L4",
+        "title": "Policy Lineage & Constitutional Authority",
+        "validated": false,
+        "issues": [
+          "L4 evaluation error: name 're' is not defined"
+        ],
+        "severity": "HIGH",
+        "policies_triggered": [],
+        "policy_lineage": [],
+        "constitutional": {
+          "clause": "GNCE Sec. 4.0 — Policy lineage must deterministically link rules to obligations."
+        },
+        "checks": [],
+        "evidence": {
+          "error": "name 're' is not defined"
+        },
+        "decision_gate": {
+          "allow_downstream": false,
+          "block_reason": "L4 error: name 're' is not defined"
+        }
+      },
+      "L5_integrity_and_tokenization": {
+        "layer": "L5",
+        "title": "Integrity & Cryptographic Execution Token (CET)",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "content_hash_sha256": "sha256:063a91ba0a5c28ab4bae79488f2273fc1b7654f8ab33bfb87cb19e635f738f99",
+        "nonce": "b3e6f4229bb42a16a11b696b3f3076028b4b66383ac5c093a24680f92e4a5bb6",
+        "pseudo_signature_sha256": "sha256:b45c77ed588356dcc8654e227366e2b5d322f5a9bdefebecfc9fb62d28b92955",
+        "signing_strategy": "GNCE_v0.4_pseudo_signature",
+        "constitutional": {
+          "clause": "GNCE Sec. 5.1 — Constitutional decisions must be integrity-bound via CET.",
+          "explainability": {
+            "headline": "CET SIGNED — constitutional substrate is integrity-bound (non-repudiable)."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L5.CONTENT_HASH_PRESENT",
+            "description": "Content hash present.",
+            "pass": true,
+            "observed": "sha256:063a91ba0a5c28ab4bae7..."
+          },
+          {
+            "check_id": "L5.NONCE_PRESENT",
+            "description": "Nonce present.",
+            "pass": true,
+            "observed": "b3e6f4229bb42a16a11b696b3f30..."
+          },
+          {
+            "check_id": "L5.SIGNATURE_PRESENT",
+            "description": "Signature present.",
+            "pass": true,
+            "observed": "sha256:b45c77ed588356dcc8654..."
+          }
+        ],
+        "evidence": {
+          "signing_strategy": "GNCE_v0.4_pseudo_signature",
+          "content_hash_sha256": "sha256:063a91ba0a5c28ab4bae79488f2273fc1b7654f8ab33bfb87cb19e635f738f99"
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null,
+          "gate_reason": "ALLOW: CET signed and integrity-bound for verdict=ALLOW."
+        }
+      },
+      "L6_behavioral_drift_and_monitoring": {
+        "drift_status": "NO_DRIFT",
+        "drift_outcome": "NO_DRIFT",
+        "drift_score": 0.0,
+        "reason": "Behavior within expected baseline (drift score: 0.00).",
+        "human_rationale": null,
+        "signals": {
+          "payload_fingerprint": "654bb76b5119800644b12472f2328ffca0875c04d887a9290afd7e32e00f5f3e",
+          "policies_fingerprint": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "l1_fingerprint": "a3e829284bb5bbcef7c658f742ead21aa4ccea6e1cc2ee63aaac0ddcdadfeccf"
+        },
+        "layer": "L6",
+        "title": "Behavioral Drift & Constitutional Monitoring",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "constitutional": {
+          "clause": "GNCE Sec. 6.1 — Behavioral drift monitoring must detect unsafe patterns.",
+          "explainability": {
+            "headline": "NO DRIFT — monitoring reports stable behavior."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L6.DRIFT_ENGINE_EMITTED",
+            "description": "Drift outcome emitted.",
+            "pass": true,
+            "observed": "NO_DRIFT/0.0"
+          },
+          {
+            "check_id": "L6.DRIFT_ALERT_CHECK",
+            "description": "No drift alert (or escalation required).",
+            "pass": true,
+            "observed": "NO_DRIFT"
+          }
+        ],
+        "evidence": {
+          "drift_outcome": "NO_DRIFT",
+          "drift_score": 0.0,
+          "notes": null
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        }
+      },
+      "L7_veto_and_execution_feedback": {
+        "layer": "L7",
+        "title": "Veto Path & Sovereign Execution Feedback",
+        "validated": true,
+        "execution_authorized": true,
+        "veto_triggered": false,
+        "veto_path_triggered": false,
+        "veto_category": "NONE",
+        "escalation_required": "NONE",
+        "evaluation_mode": "STRICT",
+        "veto_layer": null,
+        "origin_layer": null,
+        "trigger_layer": null,
+        "clause": null,
+        "veto_basis": [],
+        "constitutional_citation": "A system cannot execute an ALLOW verdict when HIGH/CRITICAL obligations are violated.",
+        "corrective_signal": null,
+        "severity": "LOW",
+        "issues": [],
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        },
+        "veto_artifact_hash_sha256": "sha256:75cbfc8e2bf584a4d6ab1e5d152116fcae42f80c7263a9e5e0c567414ac552a2"
+      },
+      "stewardship_context": {
+        "organizational_steward": {
+          "steward_type": "ORGANIZATIONAL_STEWARD",
+          "display_name": "Deployment-Level Policy Team (L4 Stewardship)",
+          "governance_domain": "GNCE Policy Lineage & Constitutional Authority (L4)"
+        },
+        "human_steward": {
+          "steward_type": "HUMAN_REVIEW_POOL",
+          "display_name": "Unassigned (Review Pool)"
+        },
+        "governance_tier": {
+          "tier": "TIER_2_OPERATIONAL",
+          "description": "Operational governance tier for day-to-day GNCE decisions."
+        },
+        "sovereign_engine": {
+          "engine_name": "GNCE Sovereign Constitutional Engine",
+          "version": "0.7.2-RC"
+        }
+      },
+      "governance_context": {
+        "industry_id": "SOCIAL_MEDIA",
+        "profile_id": "VLOP_SOCIAL_META",
+        "industry_display_name": null,
+        "profile_display_name": null,
+        "scope_enabled_regimes": [
+          "DMA",
+          "DSA",
+          "EU_AI_ACT",
+          "GDPR",
+          "ISO_42001",
+          "NIST_AI_RMF"
+        ],
+        "decision_bundle_id": "bundle-8152bf1a4984",
+        "chain_of_custody": {
+          "request_received_utc": "2026-01-04T20:38:10+00:00",
+          "kernel_evaluated_by": "GNCE Sovereign Constitutional Engine",
+          "kernel_version": "0.7.2-RC",
+          "execution_authorized": true,
+          "veto_category": "NONE",
+          "timeline_events": [
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "REQUEST_RECEIVED",
+              "detail": "Evaluation ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96 received by GNCE sovereign kernel"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L0_COMPLETED",
+              "detail": "validated=True issues_count=0"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "ROUTED_TO_PROFILE",
+              "detail": "industry_id=SOCIAL_MEDIA profile_id=VLOP_SOCIAL_META enabled_regimes=6"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L2_SNAPSHOT_HASHED",
+              "detail": "input_hash=sha256:a1cd5ccd870..."
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L3_L4_COMPLETED",
+              "detail": "policies=0 blocking_failures=0"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L1_VERDICT_COMPUTED",
+              "detail": "decision=ALLOW severity=LOW"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L5_CET_SIGNATURE_ATTACHED",
+              "detail": "content_hash=sha256:063a91ba0a5..."
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L6_DRIFT_EVALUATED",
+              "detail": "outcome=NO_DRIFT score=0.0"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L7_VETO_EVALUATED",
+              "detail": "authorized=True veto_category=NONE evaluation_mode=STRICT"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "QUALITY_GATES_FAILED",
+              "detail": "failures=2"
+            }
+          ],
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96",
+          "decision_bundle_id": "bundle-8152bf1a4984"
+        },
+        "verdict_snapshot": {
+          "decision_outcome": "ALLOW",
+          "severity": "LOW",
+          "timestamp_utc": "2026-01-04T20:38:10+00:00",
+          "engine_version": "0.7.2-RC",
+          "human_oversight_required": false,
+          "safe_state_triggered": false,
+          "drift_outcome": "NO_DRIFT",
+          "drift_score": 0.0,
+          "evaluation_mode": "STRICT"
+        }
+      },
+      "sars_v2": {
+        "article_compliance": [],
+        "severity_weighted_score": null,
+        "heatmap_vector": {},
+        "explainability": {
+          "scoring_method": "",
+          "cross_article_links": []
+        }
+      },
+      "evidence_chain": [],
+      "constitutional_path": [],
+      "kernel_execution_timeline": [
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "REQUEST_RECEIVED",
+          "detail": "Evaluation ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96 received by GNCE sovereign kernel"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L0_COMPLETED",
+          "detail": "validated=True issues_count=0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "ROUTED_TO_PROFILE",
+          "detail": "industry_id=SOCIAL_MEDIA profile_id=VLOP_SOCIAL_META enabled_regimes=6"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L2_SNAPSHOT_HASHED",
+          "detail": "input_hash=sha256:a1cd5ccd870..."
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L3_L4_COMPLETED",
+          "detail": "policies=0 blocking_failures=0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L1_VERDICT_COMPUTED",
+          "detail": "decision=ALLOW severity=LOW"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L5_CET_SIGNATURE_ATTACHED",
+          "detail": "content_hash=sha256:063a91ba0a5..."
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L6_DRIFT_EVALUATED",
+          "detail": "outcome=NO_DRIFT score=0.0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L7_VETO_EVALUATED",
+          "detail": "authorized=True veto_category=NONE evaluation_mode=STRICT"
+        }
+      ],
+      "dsa_cet_extended": {
+        "articles_evaluated": [],
+        "trusted_flagger_chain": [],
+        "regulatory_access_chain": [],
+        "explainability": {
+          "why_article_applied": "",
+          "evidence_links": []
+        }
+      },
+      "evaluation_context_id": "33de955d-a1fb-48ce-8abd-4e26c9959464",
+      "evaluation_mode": "STRICT",
+      "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96",
+      "rule_coverage_analysis": {
+        "total_policies": 0,
+        "by_status": {},
+        "by_severity": {},
+        "by_regime": {}
+      },
+      "decision_bundle_id": "bundle-8152bf1a4984",
+      "timestamp_utc": "2026-01-04T20:38:10+00:00",
+      "domains_triggered": [],
+      "quality_gates": {
+        "passed": false,
+        "failures": [
+          "Only 0 policies triggered, minimum is 3",
+          "Missing required field: adra_hash"
+        ],
+        "checked_at": "2026-01-14T10:33:08+00:00"
+      },
+      "adra_hash": "sha256:23dff55ac9ba16e370739ae2be51fae8d0f470db609a40e920c5f66efd2a851f"
+    },
+    {
+      "gnce_contract_version": "1.1",
+      "finalized": false,
+      "adra_version": "0.5",
+      "adra_id": "adra-38c44d9c67534281",
+      "GNCE_version": "0.7.2-RC",
+      "created_at_utc": "2026-01-14T10:33:08.394809+00:00",
+      "drift_outcome": "NO_DRIFT",
+      "drift_score": 0.0,
+      "L0_pre_execution_validation": {
+        "layer": "L0",
+        "title": "Pre-Execution Constitutional Validation",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "constitutional": {
+          "clause": "GNCE Sec. 0.1 — Inputs must be structurally valid JSON objects.",
+          "justification": "L0 verifies structural integrity before downstream layers execute.",
+          "explainability": {
+            "why_required": "GNCE must guarantee deterministic inputs.",
+            "impact": "If L0 fails, downstream computation must be blocked."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L0.JSON_OBJECT",
+            "description": "Payload is a JSON object (dict).",
+            "pass": true,
+            "observed": "dict"
+          },
+          {
+            "check_id": "L0.KEYS_CAPTURED",
+            "description": "Payload keys captured for evidence.",
+            "pass": true,
+            "observed": "keys=14"
+          }
+        ],
+        "evidence": {
+          "input_shape": "dict",
+          "keys_present": [
+            "action",
+            "content",
+            "user_id",
+            "timestamp_utc",
+            "risk_indicators",
+            "meta",
+            "industry_id",
+            "profile_id",
+            "platform_behavior",
+            "dsa",
+            "dma_profile",
+            "audit",
+            "ai_profile",
+            "governance"
+          ],
+          "issues_count": 0,
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        }
+      },
+      "L1_the_verdict_and_constitutional_outcome": {
+        "layer": "L1",
+        "title": "The Verdict & Constitutional Outcome",
+        "decision_outcome": "ALLOW",
+        "severity": "LOW",
+        "human_oversight_required": false,
+        "safe_state_triggered": false,
+        "timestamp_utc": "2026-01-04T20:38:10+00:00",
+        "engine_version": "0.7.2-RC",
+        "rationale": "Regime-local verdict computed from regime-scoped policy lineage.",
+        "summary": {
+          "policies_considered": 0,
+          "violated": 0,
+          "satisfied": 0,
+          "not_applicable": 0,
+          "unknown": 0,
+          "blocking_violations": 0,
+          "highest_severity_any": "LOW",
+          "highest_severity_violation": "LOW"
+        },
+        "human_readable_outcome": "ALLOW — Constitutional outcome at LOW severity.",
+        "because": [
+          "No violations detected; evaluated obligations are satisfied or not applicable."
+        ],
+        "regulator_summary": "Outcome: ALLOW. Severity: LOW. Blocking violations: 0. Total violations: 0. Policies considered: 0.",
+        "recommended_actions": [
+          "Proceed with execution.",
+          "Persist ADRA to SARS session ledger and export (if enabled).",
+          "Monitor drift signals (L6) over the next N runs; escalate if DRIFT_ALERT appears.",
+          "Sample this decision for periodic QA if the incident type is sensitive."
+        ],
+        "constitutional": {
+          "clause": "GNCE Sec. 1.0 — Verdict must be derived deterministically from binding obligations.",
+          "justification": "L1 adjudicates L4 policy lineage into a sovereign decision.",
+          "explainability": {
+            "headline": "ALLOW — no blocking constitutional violations detected.",
+            "impact": "Downstream layers bind to this verdict for integrity, drift and veto enforcement."
+          }
+        },
+        "evidence": {
+          "engine_version": "0.7.2-RC",
+          "policy_counts": {
+            "total": 0,
+            "violated": 0,
+            "satisfied": 0,
+            "not_applicable": 0
+          },
+          "evaluation_mode": "STRICT"
+        },
+        "decision_gate": {
+          "decision_outcome": "ALLOW",
+          "severity": "LOW",
+          "human_oversight_required": false,
+          "safe_state_triggered": false
+        }
+      },
+      "L2_input_snapshot_and_dra": {
+        "layer": "L2",
+        "title": "Input Snapshot & Deterministic Record Anchor (DRA)",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "input_snapshot": {},
+        "input_hash_sha256": "sha256:a1cd5ccd8706d47498a36a50aae93b9285eefd8a98fcb93547af7b35c72d7095",
+        "provenance": {
+          "received_at_utc": "2026-01-04T20:38:10+00:00",
+          "format_valid": true,
+          "fields_present": [
+            "action",
+            "content",
+            "user_id",
+            "timestamp_utc",
+            "risk_indicators",
+            "meta",
+            "industry_id",
+            "profile_id",
+            "platform_behavior",
+            "dsa",
+            "dma_profile",
+            "audit",
+            "ai_profile",
+            "governance"
+          ],
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+        },
+        "constitutional": {
+          "clause": "GNCE Sec. 2.2 — Every ADRA must bind to a deterministic input hash.",
+          "explainability": {
+            "headline": "INPUT BOUND — payload is cryptographically anchored to this ADRA.",
+            "impact": "The hash is carried into L5 CET integrity tokens."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L2.INPUT_HASH_PRESENT",
+            "description": "Input hash computed.",
+            "pass": true,
+            "observed": "sha256:a1cd5ccd8706d47498a36a50a..."
+          },
+          {
+            "check_id": "L2.PROVENANCE_CAPTURED",
+            "description": "Provenance captured.",
+            "pass": true,
+            "observed": "2026-01-04T20:38:10+00:00"
+          }
+        ],
+        "evidence": {
+          "input_shape": "dict",
+          "keys_present": [
+            "action",
+            "content",
+            "user_id",
+            "timestamp_utc",
+            "risk_indicators",
+            "meta",
+            "industry_id",
+            "profile_id",
+            "platform_behavior",
+            "dsa",
+            "dma_profile",
+            "audit",
+            "ai_profile",
+            "governance"
+          ],
+          "received_at_utc": "2026-01-04T20:38:10+00:00",
+          "input_hash": "sha256:a1cd5ccd8706d47498a36a50aae93b9285eefd8a98fcb93547af7b35c72d7095"
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        }
+      },
+      "L3_rule_level_trace": {
+        "layer": "L3",
+        "title": "Deterministic Rule Engine (DRE)",
+        "validated": false,
+        "issues": [
+          "L3 evaluation error: name 're' is not defined"
+        ],
+        "severity": "HIGH",
+        "summary": {
+          "error": "name 're' is not defined",
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+        },
+        "causal_trace": [],
+        "constitutional": {
+          "clause": "GNCE Sec. 3.4 — Rule-level explainability must be available for regulators."
+        },
+        "checks": [],
+        "evidence": {
+          "error": "name 're' is not defined",
+          "traceback": "HIDDEN"
+        },
+        "decision_gate": {
+          "allow_downstream": false,
+          "block_reason": "L3 error: name 're' is not defined"
+        },
+        "enabled_regimes": [
+          "GDPR"
+        ]
+      },
+      "L4_policy_lineage_and_constitution": {
+        "layer": "L4",
+        "title": "Policy Lineage & Constitutional Authority",
+        "validated": false,
+        "issues": [
+          "L4 evaluation error: name 're' is not defined"
+        ],
+        "severity": "HIGH",
+        "policies_triggered": [],
+        "policy_lineage": [],
+        "constitutional": {
+          "clause": "GNCE Sec. 4.0 — Policy lineage must deterministically link rules to obligations."
+        },
+        "checks": [],
+        "evidence": {
+          "error": "name 're' is not defined"
+        },
+        "decision_gate": {
+          "allow_downstream": false,
+          "block_reason": "L4 error: name 're' is not defined"
+        }
+      },
+      "L5_integrity_and_tokenization": {
+        "layer": "L5",
+        "title": "Integrity & Cryptographic Execution Token (CET)",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "content_hash_sha256": "sha256:063a91ba0a5c28ab4bae79488f2273fc1b7654f8ab33bfb87cb19e635f738f99",
+        "nonce": "b3e6f4229bb42a16a11b696b3f3076028b4b66383ac5c093a24680f92e4a5bb6",
+        "pseudo_signature_sha256": "sha256:b45c77ed588356dcc8654e227366e2b5d322f5a9bdefebecfc9fb62d28b92955",
+        "signing_strategy": "GNCE_v0.4_pseudo_signature",
+        "constitutional": {
+          "clause": "GNCE Sec. 5.1 — Constitutional decisions must be integrity-bound via CET.",
+          "explainability": {
+            "headline": "CET SIGNED — constitutional substrate is integrity-bound (non-repudiable)."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L5.CONTENT_HASH_PRESENT",
+            "description": "Content hash present.",
+            "pass": true,
+            "observed": "sha256:063a91ba0a5c28ab4bae7..."
+          },
+          {
+            "check_id": "L5.NONCE_PRESENT",
+            "description": "Nonce present.",
+            "pass": true,
+            "observed": "b3e6f4229bb42a16a11b696b3f30..."
+          },
+          {
+            "check_id": "L5.SIGNATURE_PRESENT",
+            "description": "Signature present.",
+            "pass": true,
+            "observed": "sha256:b45c77ed588356dcc8654..."
+          }
+        ],
+        "evidence": {
+          "signing_strategy": "GNCE_v0.4_pseudo_signature",
+          "content_hash_sha256": "sha256:063a91ba0a5c28ab4bae79488f2273fc1b7654f8ab33bfb87cb19e635f738f99"
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null,
+          "gate_reason": "ALLOW: CET signed and integrity-bound for verdict=ALLOW."
+        }
+      },
+      "L6_behavioral_drift_and_monitoring": {
+        "drift_status": "NO_DRIFT",
+        "drift_outcome": "NO_DRIFT",
+        "drift_score": 0.0,
+        "reason": "Behavior within expected baseline (drift score: 0.00).",
+        "human_rationale": null,
+        "signals": {
+          "payload_fingerprint": "654bb76b5119800644b12472f2328ffca0875c04d887a9290afd7e32e00f5f3e",
+          "policies_fingerprint": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "l1_fingerprint": "a3e829284bb5bbcef7c658f742ead21aa4ccea6e1cc2ee63aaac0ddcdadfeccf"
+        },
+        "layer": "L6",
+        "title": "Behavioral Drift & Constitutional Monitoring",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "constitutional": {
+          "clause": "GNCE Sec. 6.1 — Behavioral drift monitoring must detect unsafe patterns.",
+          "explainability": {
+            "headline": "NO DRIFT — monitoring reports stable behavior."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L6.DRIFT_ENGINE_EMITTED",
+            "description": "Drift outcome emitted.",
+            "pass": true,
+            "observed": "NO_DRIFT/0.0"
+          },
+          {
+            "check_id": "L6.DRIFT_ALERT_CHECK",
+            "description": "No drift alert (or escalation required).",
+            "pass": true,
+            "observed": "NO_DRIFT"
+          }
+        ],
+        "evidence": {
+          "drift_outcome": "NO_DRIFT",
+          "drift_score": 0.0,
+          "notes": null
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        }
+      },
+      "L7_veto_and_execution_feedback": {
+        "layer": "L7",
+        "title": "Veto Path & Sovereign Execution Feedback",
+        "validated": true,
+        "execution_authorized": true,
+        "veto_triggered": false,
+        "veto_path_triggered": false,
+        "veto_category": "NONE",
+        "escalation_required": "NONE",
+        "evaluation_mode": "STRICT",
+        "veto_layer": null,
+        "origin_layer": null,
+        "trigger_layer": null,
+        "clause": null,
+        "veto_basis": [],
+        "constitutional_citation": "A system cannot execute an ALLOW verdict when HIGH/CRITICAL obligations are violated.",
+        "corrective_signal": null,
+        "severity": "LOW",
+        "issues": [],
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        },
+        "veto_artifact_hash_sha256": "sha256:75cbfc8e2bf584a4d6ab1e5d152116fcae42f80c7263a9e5e0c567414ac552a2"
+      },
+      "stewardship_context": {
+        "organizational_steward": {
+          "steward_type": "ORGANIZATIONAL_STEWARD",
+          "display_name": "Deployment-Level Policy Team (L4 Stewardship)",
+          "governance_domain": "GNCE Policy Lineage & Constitutional Authority (L4)"
+        },
+        "human_steward": {
+          "steward_type": "HUMAN_REVIEW_POOL",
+          "display_name": "Unassigned (Review Pool)"
+        },
+        "governance_tier": {
+          "tier": "TIER_2_OPERATIONAL",
+          "description": "Operational governance tier for day-to-day GNCE decisions."
+        },
+        "sovereign_engine": {
+          "engine_name": "GNCE Sovereign Constitutional Engine",
+          "version": "0.7.2-RC"
+        }
+      },
+      "governance_context": {
+        "industry_id": "SOCIAL_MEDIA",
+        "profile_id": "VLOP_SOCIAL_META",
+        "industry_display_name": null,
+        "profile_display_name": null,
+        "scope_enabled_regimes": [
+          "DMA",
+          "DSA",
+          "EU_AI_ACT",
+          "GDPR",
+          "ISO_42001",
+          "NIST_AI_RMF"
+        ],
+        "decision_bundle_id": "bundle-8152bf1a4984",
+        "chain_of_custody": {
+          "request_received_utc": "2026-01-04T20:38:10+00:00",
+          "kernel_evaluated_by": "GNCE Sovereign Constitutional Engine",
+          "kernel_version": "0.7.2-RC",
+          "execution_authorized": true,
+          "veto_category": "NONE",
+          "timeline_events": [
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "REQUEST_RECEIVED",
+              "detail": "Evaluation ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96 received by GNCE sovereign kernel"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L0_COMPLETED",
+              "detail": "validated=True issues_count=0"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "ROUTED_TO_PROFILE",
+              "detail": "industry_id=SOCIAL_MEDIA profile_id=VLOP_SOCIAL_META enabled_regimes=6"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L2_SNAPSHOT_HASHED",
+              "detail": "input_hash=sha256:a1cd5ccd870..."
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L3_L4_COMPLETED",
+              "detail": "policies=0 blocking_failures=0"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L1_VERDICT_COMPUTED",
+              "detail": "decision=ALLOW severity=LOW"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L5_CET_SIGNATURE_ATTACHED",
+              "detail": "content_hash=sha256:063a91ba0a5..."
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L6_DRIFT_EVALUATED",
+              "detail": "outcome=NO_DRIFT score=0.0"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L7_VETO_EVALUATED",
+              "detail": "authorized=True veto_category=NONE evaluation_mode=STRICT"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "QUALITY_GATES_FAILED",
+              "detail": "failures=2"
+            }
+          ],
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96",
+          "decision_bundle_id": "bundle-8152bf1a4984"
+        },
+        "verdict_snapshot": {
+          "decision_outcome": "ALLOW",
+          "severity": "LOW",
+          "timestamp_utc": "2026-01-04T20:38:10+00:00",
+          "engine_version": "0.7.2-RC",
+          "human_oversight_required": false,
+          "safe_state_triggered": false,
+          "drift_outcome": "NO_DRIFT",
+          "drift_score": 0.0,
+          "evaluation_mode": "STRICT"
+        }
+      },
+      "sars_v2": {
+        "article_compliance": [],
+        "severity_weighted_score": null,
+        "heatmap_vector": {},
+        "explainability": {
+          "scoring_method": "",
+          "cross_article_links": []
+        }
+      },
+      "evidence_chain": [],
+      "constitutional_path": [],
+      "kernel_execution_timeline": [
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "REQUEST_RECEIVED",
+          "detail": "Evaluation ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96 received by GNCE sovereign kernel"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L0_COMPLETED",
+          "detail": "validated=True issues_count=0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "ROUTED_TO_PROFILE",
+          "detail": "industry_id=SOCIAL_MEDIA profile_id=VLOP_SOCIAL_META enabled_regimes=6"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L2_SNAPSHOT_HASHED",
+          "detail": "input_hash=sha256:a1cd5ccd870..."
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L3_L4_COMPLETED",
+          "detail": "policies=0 blocking_failures=0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L1_VERDICT_COMPUTED",
+          "detail": "decision=ALLOW severity=LOW"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L5_CET_SIGNATURE_ATTACHED",
+          "detail": "content_hash=sha256:063a91ba0a5..."
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L6_DRIFT_EVALUATED",
+          "detail": "outcome=NO_DRIFT score=0.0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L7_VETO_EVALUATED",
+          "detail": "authorized=True veto_category=NONE evaluation_mode=STRICT"
+        }
+      ],
+      "dsa_cet_extended": {
+        "articles_evaluated": [],
+        "trusted_flagger_chain": [],
+        "regulatory_access_chain": [],
+        "explainability": {
+          "why_article_applied": "",
+          "evidence_links": []
+        }
+      },
+      "evaluation_context_id": "33de955d-a1fb-48ce-8abd-4e26c9959464",
+      "evaluation_mode": "STRICT",
+      "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96",
+      "rule_coverage_analysis": {
+        "total_policies": 0,
+        "by_status": {},
+        "by_severity": {},
+        "by_regime": {}
+      },
+      "decision_bundle_id": "bundle-8152bf1a4984",
+      "timestamp_utc": "2026-01-04T20:38:10+00:00",
+      "domains_triggered": [],
+      "quality_gates": {
+        "passed": false,
+        "failures": [
+          "Only 0 policies triggered, minimum is 3",
+          "Missing required field: adra_hash"
+        ],
+        "checked_at": "2026-01-14T10:33:08+00:00"
+      },
+      "adra_hash": "sha256:1c48cb54b36a0378631b857a3ef914ecf6e016fdadf9dd5673c5dd98371ee143"
+    },
+    {
+      "gnce_contract_version": "1.1",
+      "finalized": false,
+      "adra_version": "0.5",
+      "adra_id": "adra-cd85bea1ad9a4e9a",
+      "GNCE_version": "0.7.2-RC",
+      "created_at_utc": "2026-01-14T10:33:08.394809+00:00",
+      "drift_outcome": "NO_DRIFT",
+      "drift_score": 0.0,
+      "L0_pre_execution_validation": {
+        "layer": "L0",
+        "title": "Pre-Execution Constitutional Validation",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "constitutional": {
+          "clause": "GNCE Sec. 0.1 — Inputs must be structurally valid JSON objects.",
+          "justification": "L0 verifies structural integrity before downstream layers execute.",
+          "explainability": {
+            "why_required": "GNCE must guarantee deterministic inputs.",
+            "impact": "If L0 fails, downstream computation must be blocked."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L0.JSON_OBJECT",
+            "description": "Payload is a JSON object (dict).",
+            "pass": true,
+            "observed": "dict"
+          },
+          {
+            "check_id": "L0.KEYS_CAPTURED",
+            "description": "Payload keys captured for evidence.",
+            "pass": true,
+            "observed": "keys=14"
+          }
+        ],
+        "evidence": {
+          "input_shape": "dict",
+          "keys_present": [
+            "action",
+            "content",
+            "user_id",
+            "timestamp_utc",
+            "risk_indicators",
+            "meta",
+            "industry_id",
+            "profile_id",
+            "platform_behavior",
+            "dsa",
+            "dma_profile",
+            "audit",
+            "ai_profile",
+            "governance"
+          ],
+          "issues_count": 0,
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        }
+      },
+      "L1_the_verdict_and_constitutional_outcome": {
+        "layer": "L1",
+        "title": "The Verdict & Constitutional Outcome",
+        "decision_outcome": "ALLOW",
+        "severity": "LOW",
+        "human_oversight_required": false,
+        "safe_state_triggered": false,
+        "timestamp_utc": "2026-01-04T20:38:10+00:00",
+        "engine_version": "0.7.2-RC",
+        "rationale": "Regime-local verdict computed from regime-scoped policy lineage.",
+        "summary": {
+          "policies_considered": 0,
+          "violated": 0,
+          "satisfied": 0,
+          "not_applicable": 0,
+          "unknown": 0,
+          "blocking_violations": 0,
+          "highest_severity_any": "LOW",
+          "highest_severity_violation": "LOW"
+        },
+        "human_readable_outcome": "ALLOW — Constitutional outcome at LOW severity.",
+        "because": [
+          "No violations detected; evaluated obligations are satisfied or not applicable."
+        ],
+        "regulator_summary": "Outcome: ALLOW. Severity: LOW. Blocking violations: 0. Total violations: 0. Policies considered: 0.",
+        "recommended_actions": [
+          "Proceed with execution.",
+          "Persist ADRA to SARS session ledger and export (if enabled).",
+          "Monitor drift signals (L6) over the next N runs; escalate if DRIFT_ALERT appears.",
+          "Sample this decision for periodic QA if the incident type is sensitive."
+        ],
+        "constitutional": {
+          "clause": "GNCE Sec. 1.0 — Verdict must be derived deterministically from binding obligations.",
+          "justification": "L1 adjudicates L4 policy lineage into a sovereign decision.",
+          "explainability": {
+            "headline": "ALLOW — no blocking constitutional violations detected.",
+            "impact": "Downstream layers bind to this verdict for integrity, drift and veto enforcement."
+          }
+        },
+        "evidence": {
+          "engine_version": "0.7.2-RC",
+          "policy_counts": {
+            "total": 0,
+            "violated": 0,
+            "satisfied": 0,
+            "not_applicable": 0
+          },
+          "evaluation_mode": "STRICT"
+        },
+        "decision_gate": {
+          "decision_outcome": "ALLOW",
+          "severity": "LOW",
+          "human_oversight_required": false,
+          "safe_state_triggered": false
+        }
+      },
+      "L2_input_snapshot_and_dra": {
+        "layer": "L2",
+        "title": "Input Snapshot & Deterministic Record Anchor (DRA)",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "input_snapshot": {},
+        "input_hash_sha256": "sha256:a1cd5ccd8706d47498a36a50aae93b9285eefd8a98fcb93547af7b35c72d7095",
+        "provenance": {
+          "received_at_utc": "2026-01-04T20:38:10+00:00",
+          "format_valid": true,
+          "fields_present": [
+            "action",
+            "content",
+            "user_id",
+            "timestamp_utc",
+            "risk_indicators",
+            "meta",
+            "industry_id",
+            "profile_id",
+            "platform_behavior",
+            "dsa",
+            "dma_profile",
+            "audit",
+            "ai_profile",
+            "governance"
+          ],
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+        },
+        "constitutional": {
+          "clause": "GNCE Sec. 2.2 — Every ADRA must bind to a deterministic input hash.",
+          "explainability": {
+            "headline": "INPUT BOUND — payload is cryptographically anchored to this ADRA.",
+            "impact": "The hash is carried into L5 CET integrity tokens."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L2.INPUT_HASH_PRESENT",
+            "description": "Input hash computed.",
+            "pass": true,
+            "observed": "sha256:a1cd5ccd8706d47498a36a50a..."
+          },
+          {
+            "check_id": "L2.PROVENANCE_CAPTURED",
+            "description": "Provenance captured.",
+            "pass": true,
+            "observed": "2026-01-04T20:38:10+00:00"
+          }
+        ],
+        "evidence": {
+          "input_shape": "dict",
+          "keys_present": [
+            "action",
+            "content",
+            "user_id",
+            "timestamp_utc",
+            "risk_indicators",
+            "meta",
+            "industry_id",
+            "profile_id",
+            "platform_behavior",
+            "dsa",
+            "dma_profile",
+            "audit",
+            "ai_profile",
+            "governance"
+          ],
+          "received_at_utc": "2026-01-04T20:38:10+00:00",
+          "input_hash": "sha256:a1cd5ccd8706d47498a36a50aae93b9285eefd8a98fcb93547af7b35c72d7095"
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        }
+      },
+      "L3_rule_level_trace": {
+        "layer": "L3",
+        "title": "Deterministic Rule Engine (DRE)",
+        "validated": false,
+        "issues": [
+          "L3 evaluation error: name 're' is not defined"
+        ],
+        "severity": "HIGH",
+        "summary": {
+          "error": "name 're' is not defined",
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+        },
+        "causal_trace": [],
+        "constitutional": {
+          "clause": "GNCE Sec. 3.4 — Rule-level explainability must be available for regulators."
+        },
+        "checks": [],
+        "evidence": {
+          "error": "name 're' is not defined",
+          "traceback": "HIDDEN"
+        },
+        "decision_gate": {
+          "allow_downstream": false,
+          "block_reason": "L3 error: name 're' is not defined"
+        },
+        "enabled_regimes": [
+          "ISO_42001"
+        ]
+      },
+      "L4_policy_lineage_and_constitution": {
+        "layer": "L4",
+        "title": "Policy Lineage & Constitutional Authority",
+        "validated": false,
+        "issues": [
+          "L4 evaluation error: name 're' is not defined"
+        ],
+        "severity": "HIGH",
+        "policies_triggered": [],
+        "policy_lineage": [],
+        "constitutional": {
+          "clause": "GNCE Sec. 4.0 — Policy lineage must deterministically link rules to obligations."
+        },
+        "checks": [],
+        "evidence": {
+          "error": "name 're' is not defined"
+        },
+        "decision_gate": {
+          "allow_downstream": false,
+          "block_reason": "L4 error: name 're' is not defined"
+        }
+      },
+      "L5_integrity_and_tokenization": {
+        "layer": "L5",
+        "title": "Integrity & Cryptographic Execution Token (CET)",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "content_hash_sha256": "sha256:063a91ba0a5c28ab4bae79488f2273fc1b7654f8ab33bfb87cb19e635f738f99",
+        "nonce": "b3e6f4229bb42a16a11b696b3f3076028b4b66383ac5c093a24680f92e4a5bb6",
+        "pseudo_signature_sha256": "sha256:b45c77ed588356dcc8654e227366e2b5d322f5a9bdefebecfc9fb62d28b92955",
+        "signing_strategy": "GNCE_v0.4_pseudo_signature",
+        "constitutional": {
+          "clause": "GNCE Sec. 5.1 — Constitutional decisions must be integrity-bound via CET.",
+          "explainability": {
+            "headline": "CET SIGNED — constitutional substrate is integrity-bound (non-repudiable)."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L5.CONTENT_HASH_PRESENT",
+            "description": "Content hash present.",
+            "pass": true,
+            "observed": "sha256:063a91ba0a5c28ab4bae7..."
+          },
+          {
+            "check_id": "L5.NONCE_PRESENT",
+            "description": "Nonce present.",
+            "pass": true,
+            "observed": "b3e6f4229bb42a16a11b696b3f30..."
+          },
+          {
+            "check_id": "L5.SIGNATURE_PRESENT",
+            "description": "Signature present.",
+            "pass": true,
+            "observed": "sha256:b45c77ed588356dcc8654..."
+          }
+        ],
+        "evidence": {
+          "signing_strategy": "GNCE_v0.4_pseudo_signature",
+          "content_hash_sha256": "sha256:063a91ba0a5c28ab4bae79488f2273fc1b7654f8ab33bfb87cb19e635f738f99"
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null,
+          "gate_reason": "ALLOW: CET signed and integrity-bound for verdict=ALLOW."
+        }
+      },
+      "L6_behavioral_drift_and_monitoring": {
+        "drift_status": "NO_DRIFT",
+        "drift_outcome": "NO_DRIFT",
+        "drift_score": 0.0,
+        "reason": "Behavior within expected baseline (drift score: 0.00).",
+        "human_rationale": null,
+        "signals": {
+          "payload_fingerprint": "654bb76b5119800644b12472f2328ffca0875c04d887a9290afd7e32e00f5f3e",
+          "policies_fingerprint": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "l1_fingerprint": "a3e829284bb5bbcef7c658f742ead21aa4ccea6e1cc2ee63aaac0ddcdadfeccf"
+        },
+        "layer": "L6",
+        "title": "Behavioral Drift & Constitutional Monitoring",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "constitutional": {
+          "clause": "GNCE Sec. 6.1 — Behavioral drift monitoring must detect unsafe patterns.",
+          "explainability": {
+            "headline": "NO DRIFT — monitoring reports stable behavior."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L6.DRIFT_ENGINE_EMITTED",
+            "description": "Drift outcome emitted.",
+            "pass": true,
+            "observed": "NO_DRIFT/0.0"
+          },
+          {
+            "check_id": "L6.DRIFT_ALERT_CHECK",
+            "description": "No drift alert (or escalation required).",
+            "pass": true,
+            "observed": "NO_DRIFT"
+          }
+        ],
+        "evidence": {
+          "drift_outcome": "NO_DRIFT",
+          "drift_score": 0.0,
+          "notes": null
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        }
+      },
+      "L7_veto_and_execution_feedback": {
+        "layer": "L7",
+        "title": "Veto Path & Sovereign Execution Feedback",
+        "validated": true,
+        "execution_authorized": true,
+        "veto_triggered": false,
+        "veto_path_triggered": false,
+        "veto_category": "NONE",
+        "escalation_required": "NONE",
+        "evaluation_mode": "STRICT",
+        "veto_layer": null,
+        "origin_layer": null,
+        "trigger_layer": null,
+        "clause": null,
+        "veto_basis": [],
+        "constitutional_citation": "A system cannot execute an ALLOW verdict when HIGH/CRITICAL obligations are violated.",
+        "corrective_signal": null,
+        "severity": "LOW",
+        "issues": [],
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        },
+        "veto_artifact_hash_sha256": "sha256:75cbfc8e2bf584a4d6ab1e5d152116fcae42f80c7263a9e5e0c567414ac552a2"
+      },
+      "stewardship_context": {
+        "organizational_steward": {
+          "steward_type": "ORGANIZATIONAL_STEWARD",
+          "display_name": "Deployment-Level Policy Team (L4 Stewardship)",
+          "governance_domain": "GNCE Policy Lineage & Constitutional Authority (L4)"
+        },
+        "human_steward": {
+          "steward_type": "HUMAN_REVIEW_POOL",
+          "display_name": "Unassigned (Review Pool)"
+        },
+        "governance_tier": {
+          "tier": "TIER_2_OPERATIONAL",
+          "description": "Operational governance tier for day-to-day GNCE decisions."
+        },
+        "sovereign_engine": {
+          "engine_name": "GNCE Sovereign Constitutional Engine",
+          "version": "0.7.2-RC"
+        }
+      },
+      "governance_context": {
+        "industry_id": "SOCIAL_MEDIA",
+        "profile_id": "VLOP_SOCIAL_META",
+        "industry_display_name": null,
+        "profile_display_name": null,
+        "scope_enabled_regimes": [
+          "DMA",
+          "DSA",
+          "EU_AI_ACT",
+          "GDPR",
+          "ISO_42001",
+          "NIST_AI_RMF"
+        ],
+        "decision_bundle_id": "bundle-8152bf1a4984",
+        "chain_of_custody": {
+          "request_received_utc": "2026-01-04T20:38:10+00:00",
+          "kernel_evaluated_by": "GNCE Sovereign Constitutional Engine",
+          "kernel_version": "0.7.2-RC",
+          "execution_authorized": true,
+          "veto_category": "NONE",
+          "timeline_events": [
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "REQUEST_RECEIVED",
+              "detail": "Evaluation ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96 received by GNCE sovereign kernel"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L0_COMPLETED",
+              "detail": "validated=True issues_count=0"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "ROUTED_TO_PROFILE",
+              "detail": "industry_id=SOCIAL_MEDIA profile_id=VLOP_SOCIAL_META enabled_regimes=6"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L2_SNAPSHOT_HASHED",
+              "detail": "input_hash=sha256:a1cd5ccd870..."
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L3_L4_COMPLETED",
+              "detail": "policies=0 blocking_failures=0"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L1_VERDICT_COMPUTED",
+              "detail": "decision=ALLOW severity=LOW"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L5_CET_SIGNATURE_ATTACHED",
+              "detail": "content_hash=sha256:063a91ba0a5..."
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L6_DRIFT_EVALUATED",
+              "detail": "outcome=NO_DRIFT score=0.0"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L7_VETO_EVALUATED",
+              "detail": "authorized=True veto_category=NONE evaluation_mode=STRICT"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "QUALITY_GATES_FAILED",
+              "detail": "failures=2"
+            }
+          ],
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96",
+          "decision_bundle_id": "bundle-8152bf1a4984"
+        },
+        "verdict_snapshot": {
+          "decision_outcome": "ALLOW",
+          "severity": "LOW",
+          "timestamp_utc": "2026-01-04T20:38:10+00:00",
+          "engine_version": "0.7.2-RC",
+          "human_oversight_required": false,
+          "safe_state_triggered": false,
+          "drift_outcome": "NO_DRIFT",
+          "drift_score": 0.0,
+          "evaluation_mode": "STRICT"
+        }
+      },
+      "sars_v2": {
+        "article_compliance": [],
+        "severity_weighted_score": null,
+        "heatmap_vector": {},
+        "explainability": {
+          "scoring_method": "",
+          "cross_article_links": []
+        }
+      },
+      "evidence_chain": [],
+      "constitutional_path": [],
+      "kernel_execution_timeline": [
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "REQUEST_RECEIVED",
+          "detail": "Evaluation ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96 received by GNCE sovereign kernel"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L0_COMPLETED",
+          "detail": "validated=True issues_count=0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "ROUTED_TO_PROFILE",
+          "detail": "industry_id=SOCIAL_MEDIA profile_id=VLOP_SOCIAL_META enabled_regimes=6"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L2_SNAPSHOT_HASHED",
+          "detail": "input_hash=sha256:a1cd5ccd870..."
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L3_L4_COMPLETED",
+          "detail": "policies=0 blocking_failures=0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L1_VERDICT_COMPUTED",
+          "detail": "decision=ALLOW severity=LOW"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L5_CET_SIGNATURE_ATTACHED",
+          "detail": "content_hash=sha256:063a91ba0a5..."
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L6_DRIFT_EVALUATED",
+          "detail": "outcome=NO_DRIFT score=0.0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L7_VETO_EVALUATED",
+          "detail": "authorized=True veto_category=NONE evaluation_mode=STRICT"
+        }
+      ],
+      "dsa_cet_extended": {
+        "articles_evaluated": [],
+        "trusted_flagger_chain": [],
+        "regulatory_access_chain": [],
+        "explainability": {
+          "why_article_applied": "",
+          "evidence_links": []
+        }
+      },
+      "evaluation_context_id": "33de955d-a1fb-48ce-8abd-4e26c9959464",
+      "evaluation_mode": "STRICT",
+      "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96",
+      "rule_coverage_analysis": {
+        "total_policies": 0,
+        "by_status": {},
+        "by_severity": {},
+        "by_regime": {}
+      },
+      "decision_bundle_id": "bundle-8152bf1a4984",
+      "timestamp_utc": "2026-01-04T20:38:10+00:00",
+      "domains_triggered": [],
+      "quality_gates": {
+        "passed": false,
+        "failures": [
+          "Only 0 policies triggered, minimum is 3",
+          "Missing required field: adra_hash"
+        ],
+        "checked_at": "2026-01-14T10:33:08+00:00"
+      },
+      "adra_hash": "sha256:f4d692de57a85e12cb92c43d8b44e34346f15d8847bb847c1d1fd016cb230466"
+    },
+    {
+      "gnce_contract_version": "1.1",
+      "finalized": false,
+      "adra_version": "0.5",
+      "adra_id": "adra-21c7ad5036634dae",
+      "GNCE_version": "0.7.2-RC",
+      "created_at_utc": "2026-01-14T10:33:08.394809+00:00",
+      "drift_outcome": "NO_DRIFT",
+      "drift_score": 0.0,
+      "L0_pre_execution_validation": {
+        "layer": "L0",
+        "title": "Pre-Execution Constitutional Validation",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "constitutional": {
+          "clause": "GNCE Sec. 0.1 — Inputs must be structurally valid JSON objects.",
+          "justification": "L0 verifies structural integrity before downstream layers execute.",
+          "explainability": {
+            "why_required": "GNCE must guarantee deterministic inputs.",
+            "impact": "If L0 fails, downstream computation must be blocked."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L0.JSON_OBJECT",
+            "description": "Payload is a JSON object (dict).",
+            "pass": true,
+            "observed": "dict"
+          },
+          {
+            "check_id": "L0.KEYS_CAPTURED",
+            "description": "Payload keys captured for evidence.",
+            "pass": true,
+            "observed": "keys=14"
+          }
+        ],
+        "evidence": {
+          "input_shape": "dict",
+          "keys_present": [
+            "action",
+            "content",
+            "user_id",
+            "timestamp_utc",
+            "risk_indicators",
+            "meta",
+            "industry_id",
+            "profile_id",
+            "platform_behavior",
+            "dsa",
+            "dma_profile",
+            "audit",
+            "ai_profile",
+            "governance"
+          ],
+          "issues_count": 0,
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        }
+      },
+      "L1_the_verdict_and_constitutional_outcome": {
+        "layer": "L1",
+        "title": "The Verdict & Constitutional Outcome",
+        "decision_outcome": "ALLOW",
+        "severity": "LOW",
+        "human_oversight_required": false,
+        "safe_state_triggered": false,
+        "timestamp_utc": "2026-01-04T20:38:10+00:00",
+        "engine_version": "0.7.2-RC",
+        "rationale": "Regime-local verdict computed from regime-scoped policy lineage.",
+        "summary": {
+          "policies_considered": 0,
+          "violated": 0,
+          "satisfied": 0,
+          "not_applicable": 0,
+          "unknown": 0,
+          "blocking_violations": 0,
+          "highest_severity_any": "LOW",
+          "highest_severity_violation": "LOW"
+        },
+        "human_readable_outcome": "ALLOW — Constitutional outcome at LOW severity.",
+        "because": [
+          "No violations detected; evaluated obligations are satisfied or not applicable."
+        ],
+        "regulator_summary": "Outcome: ALLOW. Severity: LOW. Blocking violations: 0. Total violations: 0. Policies considered: 0.",
+        "recommended_actions": [
+          "Proceed with execution.",
+          "Persist ADRA to SARS session ledger and export (if enabled).",
+          "Monitor drift signals (L6) over the next N runs; escalate if DRIFT_ALERT appears.",
+          "Sample this decision for periodic QA if the incident type is sensitive."
+        ],
+        "constitutional": {
+          "clause": "GNCE Sec. 1.0 — Verdict must be derived deterministically from binding obligations.",
+          "justification": "L1 adjudicates L4 policy lineage into a sovereign decision.",
+          "explainability": {
+            "headline": "ALLOW — no blocking constitutional violations detected.",
+            "impact": "Downstream layers bind to this verdict for integrity, drift and veto enforcement."
+          }
+        },
+        "evidence": {
+          "engine_version": "0.7.2-RC",
+          "policy_counts": {
+            "total": 0,
+            "violated": 0,
+            "satisfied": 0,
+            "not_applicable": 0
+          },
+          "evaluation_mode": "STRICT"
+        },
+        "decision_gate": {
+          "decision_outcome": "ALLOW",
+          "severity": "LOW",
+          "human_oversight_required": false,
+          "safe_state_triggered": false
+        }
+      },
+      "L2_input_snapshot_and_dra": {
+        "layer": "L2",
+        "title": "Input Snapshot & Deterministic Record Anchor (DRA)",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "input_snapshot": {},
+        "input_hash_sha256": "sha256:a1cd5ccd8706d47498a36a50aae93b9285eefd8a98fcb93547af7b35c72d7095",
+        "provenance": {
+          "received_at_utc": "2026-01-04T20:38:10+00:00",
+          "format_valid": true,
+          "fields_present": [
+            "action",
+            "content",
+            "user_id",
+            "timestamp_utc",
+            "risk_indicators",
+            "meta",
+            "industry_id",
+            "profile_id",
+            "platform_behavior",
+            "dsa",
+            "dma_profile",
+            "audit",
+            "ai_profile",
+            "governance"
+          ],
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+        },
+        "constitutional": {
+          "clause": "GNCE Sec. 2.2 — Every ADRA must bind to a deterministic input hash.",
+          "explainability": {
+            "headline": "INPUT BOUND — payload is cryptographically anchored to this ADRA.",
+            "impact": "The hash is carried into L5 CET integrity tokens."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L2.INPUT_HASH_PRESENT",
+            "description": "Input hash computed.",
+            "pass": true,
+            "observed": "sha256:a1cd5ccd8706d47498a36a50a..."
+          },
+          {
+            "check_id": "L2.PROVENANCE_CAPTURED",
+            "description": "Provenance captured.",
+            "pass": true,
+            "observed": "2026-01-04T20:38:10+00:00"
+          }
+        ],
+        "evidence": {
+          "input_shape": "dict",
+          "keys_present": [
+            "action",
+            "content",
+            "user_id",
+            "timestamp_utc",
+            "risk_indicators",
+            "meta",
+            "industry_id",
+            "profile_id",
+            "platform_behavior",
+            "dsa",
+            "dma_profile",
+            "audit",
+            "ai_profile",
+            "governance"
+          ],
+          "received_at_utc": "2026-01-04T20:38:10+00:00",
+          "input_hash": "sha256:a1cd5ccd8706d47498a36a50aae93b9285eefd8a98fcb93547af7b35c72d7095"
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        }
+      },
+      "L3_rule_level_trace": {
+        "layer": "L3",
+        "title": "Deterministic Rule Engine (DRE)",
+        "validated": false,
+        "issues": [
+          "L3 evaluation error: name 're' is not defined"
+        ],
+        "severity": "HIGH",
+        "summary": {
+          "error": "name 're' is not defined",
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+        },
+        "causal_trace": [],
+        "constitutional": {
+          "clause": "GNCE Sec. 3.4 — Rule-level explainability must be available for regulators."
+        },
+        "checks": [],
+        "evidence": {
+          "error": "name 're' is not defined",
+          "traceback": "HIDDEN"
+        },
+        "decision_gate": {
+          "allow_downstream": false,
+          "block_reason": "L3 error: name 're' is not defined"
+        },
+        "enabled_regimes": [
+          "NIST_AI_RMF"
+        ]
+      },
+      "L4_policy_lineage_and_constitution": {
+        "layer": "L4",
+        "title": "Policy Lineage & Constitutional Authority",
+        "validated": false,
+        "issues": [
+          "L4 evaluation error: name 're' is not defined"
+        ],
+        "severity": "HIGH",
+        "policies_triggered": [],
+        "policy_lineage": [],
+        "constitutional": {
+          "clause": "GNCE Sec. 4.0 — Policy lineage must deterministically link rules to obligations."
+        },
+        "checks": [],
+        "evidence": {
+          "error": "name 're' is not defined"
+        },
+        "decision_gate": {
+          "allow_downstream": false,
+          "block_reason": "L4 error: name 're' is not defined"
+        }
+      },
+      "L5_integrity_and_tokenization": {
+        "layer": "L5",
+        "title": "Integrity & Cryptographic Execution Token (CET)",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "content_hash_sha256": "sha256:063a91ba0a5c28ab4bae79488f2273fc1b7654f8ab33bfb87cb19e635f738f99",
+        "nonce": "b3e6f4229bb42a16a11b696b3f3076028b4b66383ac5c093a24680f92e4a5bb6",
+        "pseudo_signature_sha256": "sha256:b45c77ed588356dcc8654e227366e2b5d322f5a9bdefebecfc9fb62d28b92955",
+        "signing_strategy": "GNCE_v0.4_pseudo_signature",
+        "constitutional": {
+          "clause": "GNCE Sec. 5.1 — Constitutional decisions must be integrity-bound via CET.",
+          "explainability": {
+            "headline": "CET SIGNED — constitutional substrate is integrity-bound (non-repudiable)."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L5.CONTENT_HASH_PRESENT",
+            "description": "Content hash present.",
+            "pass": true,
+            "observed": "sha256:063a91ba0a5c28ab4bae7..."
+          },
+          {
+            "check_id": "L5.NONCE_PRESENT",
+            "description": "Nonce present.",
+            "pass": true,
+            "observed": "b3e6f4229bb42a16a11b696b3f30..."
+          },
+          {
+            "check_id": "L5.SIGNATURE_PRESENT",
+            "description": "Signature present.",
+            "pass": true,
+            "observed": "sha256:b45c77ed588356dcc8654..."
+          }
+        ],
+        "evidence": {
+          "signing_strategy": "GNCE_v0.4_pseudo_signature",
+          "content_hash_sha256": "sha256:063a91ba0a5c28ab4bae79488f2273fc1b7654f8ab33bfb87cb19e635f738f99"
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null,
+          "gate_reason": "ALLOW: CET signed and integrity-bound for verdict=ALLOW."
+        }
+      },
+      "L6_behavioral_drift_and_monitoring": {
+        "drift_status": "NO_DRIFT",
+        "drift_outcome": "NO_DRIFT",
+        "drift_score": 0.0,
+        "reason": "Behavior within expected baseline (drift score: 0.00).",
+        "human_rationale": null,
+        "signals": {
+          "payload_fingerprint": "654bb76b5119800644b12472f2328ffca0875c04d887a9290afd7e32e00f5f3e",
+          "policies_fingerprint": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "l1_fingerprint": "a3e829284bb5bbcef7c658f742ead21aa4ccea6e1cc2ee63aaac0ddcdadfeccf"
+        },
+        "layer": "L6",
+        "title": "Behavioral Drift & Constitutional Monitoring",
+        "validated": true,
+        "issues": [],
+        "severity": "LOW",
+        "constitutional": {
+          "clause": "GNCE Sec. 6.1 — Behavioral drift monitoring must detect unsafe patterns.",
+          "explainability": {
+            "headline": "NO DRIFT — monitoring reports stable behavior."
+          }
+        },
+        "checks": [
+          {
+            "check_id": "L6.DRIFT_ENGINE_EMITTED",
+            "description": "Drift outcome emitted.",
+            "pass": true,
+            "observed": "NO_DRIFT/0.0"
+          },
+          {
+            "check_id": "L6.DRIFT_ALERT_CHECK",
+            "description": "No drift alert (or escalation required).",
+            "pass": true,
+            "observed": "NO_DRIFT"
+          }
+        ],
+        "evidence": {
+          "drift_outcome": "NO_DRIFT",
+          "drift_score": 0.0,
+          "notes": null
+        },
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        }
+      },
+      "L7_veto_and_execution_feedback": {
+        "layer": "L7",
+        "title": "Veto Path & Sovereign Execution Feedback",
+        "validated": true,
+        "execution_authorized": true,
+        "veto_triggered": false,
+        "veto_path_triggered": false,
+        "veto_category": "NONE",
+        "escalation_required": "NONE",
+        "evaluation_mode": "STRICT",
+        "veto_layer": null,
+        "origin_layer": null,
+        "trigger_layer": null,
+        "clause": null,
+        "veto_basis": [],
+        "constitutional_citation": "A system cannot execute an ALLOW verdict when HIGH/CRITICAL obligations are violated.",
+        "corrective_signal": null,
+        "severity": "LOW",
+        "issues": [],
+        "decision_gate": {
+          "allow_downstream": true,
+          "block_reason": null
+        },
+        "veto_artifact_hash_sha256": "sha256:75cbfc8e2bf584a4d6ab1e5d152116fcae42f80c7263a9e5e0c567414ac552a2"
+      },
+      "stewardship_context": {
+        "organizational_steward": {
+          "steward_type": "ORGANIZATIONAL_STEWARD",
+          "display_name": "Deployment-Level Policy Team (L4 Stewardship)",
+          "governance_domain": "GNCE Policy Lineage & Constitutional Authority (L4)"
+        },
+        "human_steward": {
+          "steward_type": "HUMAN_REVIEW_POOL",
+          "display_name": "Unassigned (Review Pool)"
+        },
+        "governance_tier": {
+          "tier": "TIER_2_OPERATIONAL",
+          "description": "Operational governance tier for day-to-day GNCE decisions."
+        },
+        "sovereign_engine": {
+          "engine_name": "GNCE Sovereign Constitutional Engine",
+          "version": "0.7.2-RC"
+        }
+      },
+      "governance_context": {
+        "industry_id": "SOCIAL_MEDIA",
+        "profile_id": "VLOP_SOCIAL_META",
+        "industry_display_name": null,
+        "profile_display_name": null,
+        "scope_enabled_regimes": [
+          "DMA",
+          "DSA",
+          "EU_AI_ACT",
+          "GDPR",
+          "ISO_42001",
+          "NIST_AI_RMF"
+        ],
+        "decision_bundle_id": "bundle-8152bf1a4984",
+        "chain_of_custody": {
+          "request_received_utc": "2026-01-04T20:38:10+00:00",
+          "kernel_evaluated_by": "GNCE Sovereign Constitutional Engine",
+          "kernel_version": "0.7.2-RC",
+          "execution_authorized": true,
+          "veto_category": "NONE",
+          "timeline_events": [
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "REQUEST_RECEIVED",
+              "detail": "Evaluation ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96 received by GNCE sovereign kernel"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L0_COMPLETED",
+              "detail": "validated=True issues_count=0"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "ROUTED_TO_PROFILE",
+              "detail": "industry_id=SOCIAL_MEDIA profile_id=VLOP_SOCIAL_META enabled_regimes=6"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L2_SNAPSHOT_HASHED",
+              "detail": "input_hash=sha256:a1cd5ccd870..."
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L3_L4_COMPLETED",
+              "detail": "policies=0 blocking_failures=0"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L1_VERDICT_COMPUTED",
+              "detail": "decision=ALLOW severity=LOW"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L5_CET_SIGNATURE_ATTACHED",
+              "detail": "content_hash=sha256:063a91ba0a5..."
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L6_DRIFT_EVALUATED",
+              "detail": "outcome=NO_DRIFT score=0.0"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "L7_VETO_EVALUATED",
+              "detail": "authorized=True veto_category=NONE evaluation_mode=STRICT"
+            },
+            {
+              "ts_utc": "2026-01-14T10:33:08+00:00",
+              "stage": "QUALITY_GATES_FAILED",
+              "detail": "failures=2"
+            }
+          ],
+          "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96",
+          "decision_bundle_id": "bundle-8152bf1a4984"
+        },
+        "verdict_snapshot": {
+          "decision_outcome": "ALLOW",
+          "severity": "LOW",
+          "timestamp_utc": "2026-01-04T20:38:10+00:00",
+          "engine_version": "0.7.2-RC",
+          "human_oversight_required": false,
+          "safe_state_triggered": false,
+          "drift_outcome": "NO_DRIFT",
+          "drift_score": 0.0,
+          "evaluation_mode": "STRICT"
+        }
+      },
+      "sars_v2": {
+        "article_compliance": [],
+        "severity_weighted_score": null,
+        "heatmap_vector": {},
+        "explainability": {
+          "scoring_method": "",
+          "cross_article_links": []
+        }
+      },
+      "evidence_chain": [],
+      "constitutional_path": [],
+      "kernel_execution_timeline": [
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "REQUEST_RECEIVED",
+          "detail": "Evaluation ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96 received by GNCE sovereign kernel"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L0_COMPLETED",
+          "detail": "validated=True issues_count=0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "ROUTED_TO_PROFILE",
+          "detail": "industry_id=SOCIAL_MEDIA profile_id=VLOP_SOCIAL_META enabled_regimes=6"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L2_SNAPSHOT_HASHED",
+          "detail": "input_hash=sha256:a1cd5ccd870..."
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L3_L4_COMPLETED",
+          "detail": "policies=0 blocking_failures=0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L1_VERDICT_COMPUTED",
+          "detail": "decision=ALLOW severity=LOW"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L5_CET_SIGNATURE_ATTACHED",
+          "detail": "content_hash=sha256:063a91ba0a5..."
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L6_DRIFT_EVALUATED",
+          "detail": "outcome=NO_DRIFT score=0.0"
+        },
+        {
+          "ts_utc": "2026-01-14T10:33:08+00:00",
+          "stage": "L7_VETO_EVALUATED",
+          "detail": "authorized=True veto_category=NONE evaluation_mode=STRICT"
+        }
+      ],
+      "dsa_cet_extended": {
+        "articles_evaluated": [],
+        "trusted_flagger_chain": [],
+        "regulatory_access_chain": [],
+        "explainability": {
+          "why_article_applied": "",
+          "evidence_links": []
+        }
+      },
+      "evaluation_context_id": "33de955d-a1fb-48ce-8abd-4e26c9959464",
+      "evaluation_mode": "STRICT",
+      "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96",
+      "rule_coverage_analysis": {
+        "total_policies": 0,
+        "by_status": {},
+        "by_severity": {},
+        "by_regime": {}
+      },
+      "decision_bundle_id": "bundle-8152bf1a4984",
+      "timestamp_utc": "2026-01-04T20:38:10+00:00",
+      "domains_triggered": [],
+      "quality_gates": {
+        "passed": false,
+        "failures": [
+          "Only 0 policies triggered, minimum is 3",
+          "Missing required field: adra_hash"
+        ],
+        "checked_at": "2026-01-14T10:33:08+00:00"
+      },
+      "adra_hash": "sha256:8752d14469144c36a13ad37cfb99bbddadc3544d2d4f25c8cbf952b8ebb48b23"
+    }
+  ],
+  "performance_metrics": {
+    "total_duration_ms": 11.289599991869181,
+    "evaluation_success": 11.300599988317117,
+    "layer_durations_ms": {
+      "L0": 0.053099996875971556,
+      "ROUTING": 0.05289999535307288,
+      "L2": 0.10199999087490141,
+      "L3_L4": 2.9209000058472157,
+      "L1": 0.025299988919869065,
+      "L5": 0.08870000601746142,
+      "L6": 1.115499995648861,
+      "L7": 0.03500000457279384,
+      "STEWARDSHIP": 0.005199981387704611,
+      "ADRA_BUILD": 0.6021000153850764
+    },
+    "evaluation_mode": "STRICT",
+    "telemetry_available": true,
+    "evaluation_id": "ab3d848c-8c66-4fd8-80d9-8d7f4cb34f96"
+  },
+  "evidence_retention_hint": {
+    "recommended_retention_days": 365,
+    "basis": "ALLOW",
+    "expiry_date": "2027-01-14T10:33:08.401497+00:00",
+    "evaluation_mode": "STRICT"
+  }
+}
