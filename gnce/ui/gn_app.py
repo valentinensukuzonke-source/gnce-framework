@@ -705,7 +705,6 @@ def main() -> None:
     with col2:
         st.checkbox("Regulator View", key="regulator_mode", value=False)
 
-    st.checkbox("Edit input JSON before running", key="edit_before_run", value=False)
 
     # Read values from session state (Streamlit manages these via key parameter)
     engine_mode = st.session_state.get("engine_mode", "Lab Mode")
@@ -899,6 +898,9 @@ def main() -> None:
     # -----------------------------------------------------------
     st.sidebar.markdown("---")
     st.sidebar.subheader("🚀 Actions")
+    
+    # Edit JSON checkbox - placed before Run GNCE button
+    st.sidebar.checkbox("📝 Edit input JSON before running", key="edit_before_run", value=False)
     
     run_clicked = st.sidebar.button("▶️ Run GNCE", type="primary", use_container_width=True)
     
